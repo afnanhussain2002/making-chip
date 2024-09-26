@@ -14,9 +14,13 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
     },
+    daisyui: {
+      themes: ["synthwave"],
+    },
   },
   plugins: [
-    daisyui,
+    daisyui
   ],
+  
 };
 export default config;
