@@ -24,8 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" >
       <body
+      data-theme={"synthwave"}
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
