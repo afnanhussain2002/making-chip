@@ -12,3 +12,22 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model TepmVideo {
+  id             String   @id @default(cuid())
+  originalSize   String
+  public_id      String
+  compressedSize String
+  duration       Float
+  createdAt      DateTime @default(now())
+  updateAt       DateTime @updatedAt
+}
+
+model TempFile {
+  id             String   @id @default(cuid())
+  originalSize   String
+  public_id      String
+  compressedSize String
+  createdAt      DateTime @default(now())
+  updateAt       DateTime @updatedAt
+}
