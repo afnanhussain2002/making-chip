@@ -80,9 +80,9 @@ function ImageOptimize() {
               className="file-input file-input-bordered file-input-primary w-full max-w-xs"
               onChange={handleFileUpload}
             />
-            <div className="form-control mt-6">
+            {/* <div className="form-control mt-6">
               <button className="btn btn-primary">Optimize</button>
-            </div>
+            </div> */}
           </form>
           }
         </div>
