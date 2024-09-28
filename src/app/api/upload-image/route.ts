@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import cloudinary from "cloudinary";
+import cloudinary from "@/utils/cloudinary";
 import { NextRequest, NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
@@ -23,7 +23,10 @@ export async function POST(request:NextRequest) {
         }
 
         const result = await new Promise<CloudinaryImageResult>(resolve,reject) =>{
-            
+            const uploadFile = await cloudinary.uploader.upload(file, {
+                resource_type:"auto",
+                folder:"making-chip-images",
+            })
         }
     } catch (error) {
         
