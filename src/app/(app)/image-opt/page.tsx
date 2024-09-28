@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import axios from "axios";
 
 function ImageOptimize() {
 
@@ -7,7 +8,24 @@ function ImageOptimize() {
   const [isUploading, setIsUploading] = useState(false);
 
   const handleFileUpload = async(e: React.ChangeEvent<HTMLInputElement>) => {
-    
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setIsUploading(true);
+    const formData = new FormData();
+    formData.append("file", file);
+    try {
+      const response = await axios.post("api/upload-image", formData);
+      console.log(response);
+      if (!response.data) {
+        throw new Error("Failed to upload image");
+      }
+      setUploadImage(file);
+    } catch (error) {
+      console.log(error);
+      alert("Failed to upload image");
+    }finally{
+      setIsUploading(false);
+    }
   }
 
   return (
