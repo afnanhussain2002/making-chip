@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
     );
 
     // Handle the result as needed
-    return NextResponse.json(result, { status: 200 });
+    return NextResponse.json({ ...result, originalSize }, { status: 200 });
   } catch (error) {
     return NextResponse.json(
       { message: "Something went wrong when upload the file" },
