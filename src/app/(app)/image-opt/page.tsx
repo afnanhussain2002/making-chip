@@ -1,7 +1,11 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 function ImageOptimize() {
+
+  const [uploadImage, setUploadImage] = useState<File | null>(null);
+  const [isUploading, setIsUploading] = useState(false);
+  
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
