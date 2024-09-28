@@ -4,7 +4,7 @@ import axios from "axios";
 
 function ImageOptimize() {
 
-  const [uploadImage, setUploadImage] = useState<File | null>(null);
+  const [uploadedImage, setUploadedImage] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const imageRef = useRef<HTMLImageElement>(null);
 
@@ -20,7 +20,7 @@ function ImageOptimize() {
       if (!response.data) {
         throw new Error("Failed to upload image");
       }
-      setUploadImage(file);
+      setUploadedImage(file);
     } catch (error) {
       console.log(error);
       alert("Failed to upload image");
@@ -43,7 +43,12 @@ function ImageOptimize() {
           </p>
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl border border-primary">
-          <form className="card-body">
+          {
+            uploadedImage ? <>
+            
+            </>
+            :
+            <form className="card-body">
             <input
               type="file"
               className="file-input file-input-bordered file-input-primary w-full max-w-xs"
@@ -52,6 +57,7 @@ function ImageOptimize() {
               <button className="btn btn-primary">Optimize</button>
             </div>
           </form>
+          }
         </div>
       </div>
     </div>
