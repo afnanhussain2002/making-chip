@@ -14,7 +14,7 @@ function ImageOptimize() {
             user experience.
           </p>
         </div>
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl border border-primary">
           <form className="card-body">
             <input
               type="file"
