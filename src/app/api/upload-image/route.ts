@@ -17,6 +17,14 @@ export async function POST(request:NextRequest) {
         const formData = await request.formData();
         const file = formData.get("file") as File;
         const originalSize = formData.get("originalSize") as string;
+
+        if (!file) {
+            return NextResponse.json({message:"File not found"}, {status:401})
+        }
+
+        const result = await new Promise<CloudinaryImageResult>(resolve,reject) =>{
+            
+        }
     } catch (error) {
         
     }
