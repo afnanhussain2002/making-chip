@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import cloudinary from "@/utils/cloudinary";
 import { NextRequest, NextResponse } from "next/server";
-import { UploadApiResponse } from "cloudinary";
+
 
 const prisma = new PrismaClient();
 
@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData();
     const file = formData.get("file") as File;
     const originalSize = formData.get("originalSize") as string;
-    console.log("File-------", file, originalSize);
+    // console.log("File-------", file, originalSize);
 
     if (!file) {
       return NextResponse.json({ message: "File not found" }, { status: 401 });
