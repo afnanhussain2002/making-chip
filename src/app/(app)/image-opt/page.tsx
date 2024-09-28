@@ -46,6 +46,25 @@ function ImageOptimize() {
     }
   } */
 
+    const handleDownload = () =>{
+      if (!imageRef.current) return;
+      fetch(imageRef.current.src)
+        .then((response) => response.blob())
+        .then((blob) => {
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          link.download = `${uploadedImage?.replace(/\s+/g, "_").toLowerCase()}.png`;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+         window.URL.revokeObjectURL(url);
+        })
+        .catch((error) => {
+          console.error("Error downloading image:", error);
+        });
+    } 
+
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -71,7 +90,7 @@ function ImageOptimize() {
               className="w-full"
               alt="Uploaded Image"
             />
-            <button className="btn btn-primary">Download</button>
+            <button onClick={handleDownload} className="btn btn-primary">Download</button>
             </>
             :
             <form className="card-body">
