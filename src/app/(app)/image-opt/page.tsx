@@ -1,14 +1,18 @@
 "use client";
 import React, { useRef, useState } from "react";
 import axios from "axios";
+import {CldImage} from "next-cloudinary";
 
 function ImageOptimize() {
 
-  const [uploadedImage, setUploadedImage] = useState<File | null>(null);
+  const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [isUploading, setIsUploading] = useState(false);
+  const [imageWidth, setImageWidth] = useState<number>(0);
+  const [imageHeight, setImageHeight] = useState<number>(0);
   const imageRef = useRef<HTMLImageElement>(null);
 
   const handleFileUpload = async(e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
     const file = e.target.files?.[0];
     if (!file) return;
     setIsUploading(true);
@@ -20,14 +24,27 @@ function ImageOptimize() {
       if (!response.data) {
         throw new Error("Failed to upload image");
       }
-      setUploadedImage(file);
+      const data = response.data
+      console.log("width", data.width, "height",data.height);
+      setUploadedImage(data.public_id);
+     setImageWidth(data.width)
+     setImageHeight(data.height)
+      return;
     } catch (error) {
       console.log(error);
-      alert("Failed to upload image");
+     return alert("Failed to upload image");
     }finally{
       setIsUploading(false);
     }
   }
+
+  /* const handleImageLoad = () => {
+    if (imageRef.current) {
+      setImageWidth(imageRef.current.naturalWidth);
+      setImageHeight(imageRef.current.naturalHeight)
+      return
+    }
+  } */
 
   return (
     <div className="hero bg-base-200 min-h-screen">
@@ -43,8 +60,17 @@ function ImageOptimize() {
           </p>
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl border border-primary">
+          {isUploading && <div className="loading loading-lg"></div>}
           {
             uploadedImage ? <>
+            <CldImage
+              ref={imageRef}
+              width={imageWidth}
+              height={imageHeight}
+              src={uploadedImage}
+              className="w-full"
+              alt="Uploaded Image"
+            />
             <button className="btn btn-primary">Download</button>
             </>
             :
@@ -52,6 +78,7 @@ function ImageOptimize() {
             <input
               type="file"
               className="file-input file-input-bordered file-input-primary w-full max-w-xs"
+              onChange={handleFileUpload}
             />
             <div className="form-control mt-6">
               <button className="btn btn-primary">Optimize</button>
