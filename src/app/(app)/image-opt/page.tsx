@@ -45,7 +45,7 @@ function ImageOptimize() {
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl border border-primary">
           {
             uploadedImage ? <>
-            
+            <button className="btn btn-primary">Download</button>
             </>
             :
             <form className="card-body">
