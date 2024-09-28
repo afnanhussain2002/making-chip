@@ -11,5 +11,9 @@ interface CloudinaryImageResult{
 
 
 export async function POST(request:NextRequest) {
-    
+    try {
+        
+    } catch (error) {
+        
+    }
 }
