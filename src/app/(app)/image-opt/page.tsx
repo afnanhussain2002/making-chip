@@ -1,11 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import axios from "axios";
 
 function ImageOptimize() {
 
   const [uploadImage, setUploadImage] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState(false);
+  const imageRef = useRef<HTMLImageElement>(null);
 
   const handleFileUpload = async(e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
