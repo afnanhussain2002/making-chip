@@ -1,6 +1,8 @@
+import { PrismaClient } from "@prisma/client";
 import cloudinary from "cloudinary";
 import { NextRequest, NextResponse } from "next/server";
 
+const prisma = new PrismaClient();
 
 interface CloudinaryImageResult{
     public_id:string
