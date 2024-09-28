@@ -79,31 +79,37 @@ function ImageOptimize() {
           </p>
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl border border-primary">
-          {isUploading && <div className="loading loading-lg"></div>}
-          {
-            uploadedImage ? <>
-            <CldImage
-              ref={imageRef}
-              width={imageWidth}
-              height={imageHeight}
-              src={uploadedImage}
-              className="w-full"
-              alt="Uploaded Image"
-            />
-            <button onClick={handleDownload} className="btn btn-primary">Download</button>
-            </>
-            :
-            <form className="card-body">
-            <input
-              type="file"
-              className="file-input file-input-bordered file-input-primary w-full max-w-xs"
-              onChange={handleFileUpload}
-            />
-            {/* <div className="form-control mt-6">
-              <button className="btn btn-primary">Optimize</button>
-            </div> */}
-          </form>
-          }
+          {isUploading ? <div className="loading loading-lg"></div>
+        :
+        <>
+        {
+          uploadedImage ? <>
+          <CldImage
+            ref={imageRef}
+            width={imageWidth}
+            height={imageHeight}
+            src={uploadedImage}
+            className="w-full"
+            alt="Uploaded Image"
+          />
+          <button onClick={handleDownload} className="btn btn-primary">Download</button>
+          </>
+          :
+          <form className="card-body">
+          <input
+            type="file"
+            className="file-input file-input-bordered file-input-primary w-full max-w-xs"
+            onChange={handleFileUpload}
+          />
+          {/* <div className="form-control mt-6">
+            <button className="btn btn-primary">Optimize</button>
+          </div> */}
+        </form>
+        }
+        
+        </>
+
+        }
         </div>
       </div>
     </div>
