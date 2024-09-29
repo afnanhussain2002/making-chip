@@ -17,7 +17,7 @@ type SocialFormat = keyof typeof socialFormats;
 
 function ImageFormats() {
     const [uploadedImage,setUploadedImage] = useState<string | null>(null);
-    const [selectedFormat, setSelectedFormat] = useState<SocialFormat>("Instagram Portrait (4:5)");
+    const [selectedFormat, setSelectedFormat] = useState<SocialFormat>("Instagram Square (1:1)");
     const [isUploading,setIsUploading] = useState(false);
     const [isTransforming, setIsTransforming] = useState(false);
     const imageRef = useRef<HTMLImageElement>(null);
@@ -31,13 +31,15 @@ function ImageFormats() {
   const handleFileUpload = async(e: React.ChangeEvent<HTMLInputElement>) =>{
     const file = e.target.files?.[0]
 
+    console.log("file----",file );
+
     if(!file) return;
     setIsUploading(true)
     const formData = new FormData()
     formData.append("file",file)
 
     try {
-        const response = await axios.post("/api/image-upload")
+        const response = await axios.post("/api/social-format",formData)
 
         if (!response.data) {
             throw new Error("Failed to upload image");
