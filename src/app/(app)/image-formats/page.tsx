@@ -20,6 +20,13 @@ function ImageFormats() {
     const [isUploading,setIsUploading] = useState(false);
     const [isTransforming, setIsTransforming] = useState(false);
     const imageRef = useRef<HTMLImageElement>(null);
+
+    useEffect(() =>{
+        if (uploadedImage) {
+            setIsTransforming(true)
+        }
+    },[selectedFormat,uploadedImage])
+
   return (
     <div>ImageFormats</div>
   )
