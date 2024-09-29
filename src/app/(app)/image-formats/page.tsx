@@ -19,6 +19,7 @@ function ImageFormats() {
     const [selectedFormat, setSelectedFormat] = useState<SocialFormat>("Instagram Portrait (4:5)");
     const [isUploading,setIsUploading] = useState(false);
     const [isTransforming, setIsTransforming] = useState(false);
+    const imageRef = useRef<HTMLImageElement>(null);
   return (
     <div>ImageFormats</div>
   )
