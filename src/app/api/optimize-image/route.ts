@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
 
-interface CloudinaryImageUpload {
+interface CloudinaryImageOptimize {
   public_id: string;
   [key: string]: any;
 }
@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    const result = await new Promise<CloudinaryImageUpload>(
+    const result = await new Promise<CloudinaryImageOptimize>(
       (resolve, reject) => {
         const uploadStream = cloudinary.uploader.upload_stream(
           {
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
               reject(error);
               console.log("Error-------", error);
             } else {
-              resolve(uploadResult as CloudinaryImageUpload);
+              resolve(uploadResult as CloudinaryImageOptimize);
             }
           }
         );
