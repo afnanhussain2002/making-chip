@@ -56,6 +56,23 @@ function ImageFormats() {
 
   }
 
+  const handleDownload = () =>{
+    if (!imageRef.current) return;
+
+    fetch(imageRef.current.src)
+    .then((response) => response.blob())
+    .then((blob) =>{
+        const url = window.URL.createObjectURL(blob)
+        const link = document.createElement("a")
+        link.href = url
+        link.download = `${selectedFormat.replace(/\s+/g, "_").toLowerCase()}.png`
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url)
+    })
+  }
+
   return (
     <div className="container mx-auto p-4 max-w-4xl">
     <h1 className="text-3xl font-bold mb-6 text-center">
