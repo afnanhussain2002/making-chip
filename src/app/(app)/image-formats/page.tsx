@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { CldImage } from 'next-cloudinary';
+import axios from 'axios';
 
 // Define the social media formats with their respective dimensions and aspect ratios
 const socialFormats = {
@@ -34,7 +35,12 @@ function ImageFormats() {
     setIsUploading(true)
     const formData = new FormData()
     formData.append("file",file)
-    
+
+    try {
+        const response = await axios.post("/api/image-upload")
+    } catch (error) {
+        
+    }
 
   }
 
