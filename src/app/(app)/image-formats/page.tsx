@@ -27,7 +27,11 @@ function ImageFormats() {
         }
     },[selectedFormat,uploadedImage])
 
+  const handleFileUpload = async(e: React.ChangeEvent<HTMLInputElement>) =>{
+    const file = e.target.files?.[0]
+    
 
+  }
 
   return (
     <div className="container mx-auto p-4 max-w-4xl">
