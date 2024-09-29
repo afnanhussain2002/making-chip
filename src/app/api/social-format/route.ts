@@ -3,7 +3,7 @@ import { NextResponse, NextRequest } from "next/server";
 
 interface CloudinaryImageSocialFormats {
   public_id: string;
-  [key: string]: any;
+  [key: string]: string | number | boolean | null;
 }
 
 export async function POST(request: NextRequest) {
