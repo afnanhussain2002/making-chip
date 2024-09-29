@@ -38,6 +38,10 @@ function ImageFormats() {
 
     try {
         const response = await axios.post("/api/image-upload")
+
+        if (!response.data) {
+            throw new Error("Failed to upload image");
+          }
     } catch (error) {
         
     }
