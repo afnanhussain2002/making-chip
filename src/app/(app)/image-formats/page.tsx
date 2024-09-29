@@ -17,6 +17,8 @@ type SocialFormat = keyof typeof socialFormats;
 function ImageFormats() {
     const [uploadedImage,setUploadedImage] = useState<string | null>(null);
     const [selectedFormat, setSelectedFormat] = useState<SocialFormat>("Instagram Portrait (4:5)");
+    const [isUploading,setIsUploading] = useState(false);
+    const [isTransforming, setIsTransforming] = useState(false);
   return (
     <div>ImageFormats</div>
   )
