@@ -19,7 +19,7 @@ function ImageOptimize() {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      const response = await axios.post("api/upload-image", formData);
+      const response = await axios.post("api/optimize-image", formData);
       console.log(response);
       if (!response.data) {
         throw new Error("Failed to upload image");
