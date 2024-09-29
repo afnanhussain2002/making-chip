@@ -12,6 +12,8 @@ const socialFormats = {
   "Facebook Cover (205:78)": { width: 820, height: 312, aspectRatio: "205:78" },
 };
 
+type SocialFormat = keyof typeof socialFormats;
+
 function ImageFormats() {
   return (
     <div>ImageFormats</div>
