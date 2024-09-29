@@ -1,9 +1,9 @@
-import { PrismaClient } from "@prisma/client";
+// import { PrismaClient } from "@prisma/client";
 import cloudinary from "@/utils/cloudinary";
 import { NextRequest, NextResponse } from "next/server";
 
 
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 
 interface CloudinaryImageOptimize {
   public_id: string;
