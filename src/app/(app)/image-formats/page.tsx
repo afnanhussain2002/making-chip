@@ -42,8 +42,16 @@ function ImageFormats() {
         if (!response.data) {
             throw new Error("Failed to upload image");
           }
+
+          const data = response.data
+
+          setUploadedImage(data.public_id)
+
     } catch (error) {
-        
+        console.log("Error from uploading image format", error);
+        alert("Failed to format image")
+    }finally{
+        setIsUploading(false)
     }
 
   }
