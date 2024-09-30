@@ -9,6 +9,10 @@ function ImageRestore() {
     const [imageWidth, setImageWidth] = useState<number>(0);
     const [imageHeight, setImageHeight] = useState<number>(0);
     const imageRef = useRef<HTMLImageElement>(null);
+
+    const handleFileUpload = async(e: React.ChangeEvent<HTMLInputElement>) => {
+        
+    }
   return (
     <div>ImageRestore</div>
   )
