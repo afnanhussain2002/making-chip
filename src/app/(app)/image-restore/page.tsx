@@ -1,4 +1,7 @@
-import React from 'react'
+"use client"
+import React,{useState,useRef} from 'react'
+import axios from 'axios'
+import {CldImage} from 'next-cloudinary';
 
 function ImageRestore() {
   return (
