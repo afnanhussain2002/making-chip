@@ -14,7 +14,6 @@ export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
     const file = formData.get("file") as File;
-    const originalSize = formData.get("originalSize") as string;
     console.log("File-------", file.name,);
 
 
@@ -53,7 +52,7 @@ export async function POST(request: NextRequest) {
     
     })
     // Handle the result as needed
-    return NextResponse.json({ restoreImage}, { status: 200 });
+    return NextResponse.json({ ...result,restoreImage}, { status: 200 });
   } catch (error) {
     console.log(error);
     return NextResponse.json(

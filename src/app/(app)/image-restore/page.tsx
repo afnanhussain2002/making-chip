@@ -1,7 +1,7 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import {CldImage} from "next-cloudinary";
+
 
 function ImageOptimize() {
 
@@ -9,7 +9,7 @@ function ImageOptimize() {
   const [isUploading, setIsUploading] = useState(false);
   const [imageWidth, setImageWidth] = useState<number>(0);
   const [imageHeight, setImageHeight] = useState<number>(0);
-  const imageRef = useRef<HTMLImageElement>(null);
+ 
 
   const handleFileUpload = async(e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -19,14 +19,15 @@ function ImageOptimize() {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      const response = await axios.post("/api/optimize-image", formData);
+      const response = await axios.post("/api/image-restore", formData);
       console.log(response);
       if (!response.data) {
         throw new Error("Failed to upload image");
       }
       const data = response.data
       console.log("width", data.width, "height",data.height);
-      setUploadedImage(data.public_id);
+      console.log('data---------',data);
+      setUploadedImage(data.restoreImage);
      setImageWidth(data.width)
      setImageHeight(data.height)
       return;
@@ -46,24 +47,24 @@ function ImageOptimize() {
     }
   } */
 
-    const handleDownload = () =>{
-      if (!imageRef.current) return;
-      fetch(imageRef.current.src)
-        .then((response) => response.blob())
-        .then((blob) => {
-          const url = URL.createObjectURL(blob);
-          const link = document.createElement("a");
-          link.href = url;
-          link.download = `${uploadedImage?.replace(/\s+/g, "_").toLowerCase()}.png`;
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-         window.URL.revokeObjectURL(url);
-        })
-        .catch((error) => {
-          console.error("Error downloading image:", error);
-        });
-    } 
+    const handleDownload = () => {
+        if (!uploadedImage) return;
+        fetch(uploadedImage)
+          .then((response) => response.blob())
+          .then((blob) => {
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = `${uploadedImage.replace(/\s+/g, "_").toLowerCase()}.png`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+          })
+          .catch((error) => {
+            console.error("Error downloading image:", error);
+          });
+      };
 
   return (
     <div className="hero bg-base-200 min-h-screen">
@@ -80,8 +81,7 @@ function ImageOptimize() {
         <>
         {
           uploadedImage ? <>
-          <CldImage
-            ref={imageRef}
+          <img
             width={imageWidth}
             height={imageHeight}
             src={uploadedImage}
