@@ -50,7 +50,7 @@ function ImageFill() {
     }
 
     const handleDownload = () =>{
-        
+        if (!imageRef.current) return;
     }
 
   return (
