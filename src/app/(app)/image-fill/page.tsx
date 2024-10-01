@@ -5,6 +5,9 @@ import { CldImage } from 'next-cloudinary'
 
 
 function ImageFill() {
+    const [uploadedImage, setUploadedImage] = useState<string | null>(null);
+    const [isUploading, setIsUploading] = useState(false);
+    const imageRef = useRef<HTMLImageElement>(null);
   return (
     <div>ImageFill</div>
   )
