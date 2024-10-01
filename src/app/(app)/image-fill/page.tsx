@@ -1,5 +1,5 @@
 "use client"
-import React,{ useState ,useRef} from 'react'
+import React,{ useState ,useRef, useEffect} from 'react'
 import axios from 'axios'
 import { CldImage } from 'next-cloudinary'
 
@@ -19,6 +19,11 @@ function ImageFill() {
     const [isTransforming, setIsTransforming] = useState(false);
     const imageRef = useRef<HTMLImageElement>(null);
 
+    useEffect(() =>{
+        if (uploadedImage) {
+            setIsTransforming(true)
+        }
+    },[selectedFormat,uploadedImage])
     const handleFileUpload = async(e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
         const file = e.target.files?.[0];
