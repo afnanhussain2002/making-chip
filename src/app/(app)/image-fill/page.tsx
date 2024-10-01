@@ -51,6 +51,21 @@ function ImageFill() {
 
     const handleDownload = () =>{
         if (!imageRef.current) return;
+        fetch(imageRef.current.src)
+        .then((response) => response.blob())
+        .then((blob) => {
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = `${selectedFormat?.replace(/\s+/g, "_").toLowerCase()}.png`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+           window.URL.revokeObjectURL(url);
+        })
+        .catch((error) => {
+          console.error("Error downloading image:", error);
+        });
     }
 
   return (
