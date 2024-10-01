@@ -10,7 +10,9 @@ function ImageFill() {
     const imageRef = useRef<HTMLImageElement>(null);
 
     const handleFileUpload = async(e: React.ChangeEvent<HTMLInputElement>) => {
-        
+        e.preventDefault();
+        const file = e.target.files?.[0];
+        if (!file) return;
     }
   return (
     <div>ImageFill</div>
