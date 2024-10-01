@@ -7,6 +7,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 interface CloudinaryImageFill {
   public_id: string;
+  url: string;
   [key: string]: string | number | boolean | null;
 }
 
@@ -45,8 +46,12 @@ export async function POST(request: NextRequest) {
     );
     // console.log("Result-------", result);
 
+    const restoreImage = cloudinary.url(result.public_id,
+        {aspect_ratio: "16:9", background: "gen_fill", width: 1500, crop: "pad"} // Sharpening effect (adjust value as needed)
+    )
+
     // Handle the result as needed
-    return NextResponse.json({result}, { status: 200 });
+    return NextResponse.json({...result,restoreImage}, { status: 200 });
   } catch (error) {
     console.log(error);
     return NextResponse.json(
