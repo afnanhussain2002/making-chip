@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 // const prisma = new PrismaClient();
 
-interface CloudinaryImageFill {
+interface CloudinaryImageRemoveBg {
   public_id: string;
   url: string;
   [key: string]: string | number | boolean | null;
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    const result = await new Promise<CloudinaryImageFill>(
+    const result = await new Promise<CloudinaryImageRemoveBg>(
       (resolve, reject) => {
         const uploadStream = cloudinary.uploader.upload_stream(
           {
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
               reject(error);
               console.log("Error-------", error);
             } else {
-              resolve(uploadResult as CloudinaryImageFill);
+              resolve(uploadResult as CloudinaryImageRemoveBg);
             }
           }
         );
