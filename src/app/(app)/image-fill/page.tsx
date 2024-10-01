@@ -48,6 +48,11 @@ function ImageFill() {
             setIsUploading(false);
         }
     }
+
+    const handleDownload = () =>{
+        
+    }
+
   return (
     <div>ImageFill</div>
   )
