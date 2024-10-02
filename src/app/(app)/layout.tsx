@@ -13,7 +13,11 @@ import {
   ImagePlus,
   Scan,
   RectangleEllipsis,
+  Facebook,
+  Linkedin,
 } from "lucide-react";
+import Image from "next/image";
+import XLogo from "@/images/x-logo.png"
 
 const sidebarItems = [
   { href: "/home", icon: LayoutDashboardIcon, label: "Home Page" },
@@ -43,6 +47,7 @@ export default function AppLayout({
   };
 
   return (
+    <>
     <div className="drawer lg:drawer-open">
       <input
         id="sidebar-drawer"
@@ -147,8 +152,28 @@ export default function AppLayout({
               </button>
             </div>
           )}
+          <div className="flex justify-center items-center gap-4">
+            <p>Follow us</p>
+            <a href="https://www.facebook.com/@afnan.hussain.908">
+            <Facebook/>
+            </a>
+            <a href="https://x.com/MdAfnanHussain">
+           <Image
+           src={XLogo}
+           width={20}
+           height={30}
+           alt="x.com"
+           />
+            </a>
+            <a href="https://www.linkedin.com/in/md-afnan-hussain/">
+            <Linkedin/>
+            </a>
+
+          </div>
         </aside>
       </div>
     </div>
+    
+    </>
   );
 }
