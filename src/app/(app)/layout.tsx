@@ -11,12 +11,17 @@ import {
   Share2Icon,
   UploadIcon,
   ImageIcon,
+  ImagePlus,
+  Scan,
+  RectangleEllipsis
 } from "lucide-react";
 
 const sidebarItems = [
   { href: "/home", icon: LayoutDashboardIcon, label: "Home Page" },
-  { href: "/social-formats", icon: Share2Icon, label: "Social Formats" },
-  { href: "/video-upload", icon: UploadIcon, label: "Video Upload" },
+  { href: "/image-formats", icon: Share2Icon, label: "Image Formats" },
+  { href: "/image-optimize", icon: ImagePlus, label: "Image Optimize" },
+  { href: "/image-restore", icon: Scan, label: "Image Restore" },
+  { href: "/image-fill", icon: RectangleEllipsis, label: "Image Bg Fill" },
 ];
 
 export default function AppLayout({
