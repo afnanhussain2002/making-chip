@@ -95,7 +95,7 @@ export default function AppLayout({
                 </>
               ) : (
                 <>
-                  <Link href="/image-formats">
+                  <Link href="/sign-in">
                     <button className=" text-primary font-bold px-6 py-3 rounded-lg shadow-lg border-2 border-primary">
                       Login
                     </button>
