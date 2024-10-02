@@ -9,7 +9,6 @@ import {
   MenuIcon,
   LayoutDashboardIcon,
   Share2Icon,
-  UploadIcon,
   ImageIcon,
   ImagePlus,
   Scan,
