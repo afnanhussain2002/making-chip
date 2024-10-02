@@ -31,9 +31,7 @@ export async function POST(request: NextRequest) {
           {
             resource_type: "image",
             folder: "making-chip-images",
-            transformation:[
-                {effect:"background_removal"}
-            ]
+            background_removal: 'cloudinary_ai'
           },
           (error, uploadResult) => {
             if (error) {
@@ -49,8 +47,12 @@ export async function POST(request: NextRequest) {
     );
     // console.log("Result-------", result);
 
-    /* const restoreImage = cloudinary.url(result.public_id,
-        {aspect_ratio: "16:9", background: "gen_fill", width: 1500, crop: "pad"} // Sharpening effect (adjust value as needed)
+   /*  const restoreImage = cloudinary.url(result.public_id,
+        {
+          transformation:[
+            {effect: "background_removal",}
+          ]
+        } // Sharpening effect (adjust value as needed)
     ) */
 
     // Handle the result as needed
