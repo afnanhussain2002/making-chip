@@ -153,11 +153,11 @@ export default function AppLayout({
             </div>
           )}
           <div className="flex justify-center items-center gap-4">
-            <p>Follow us</p>
-            <a href="https://www.facebook.com/@afnan.hussain.908">
+            <p className="font-bold">Follow us:</p>
+            <a href="https://www.facebook.com/@afnan.hussain.908" target="_blank">
             <Facebook/>
             </a>
-            <a href="https://x.com/MdAfnanHussain">
+            <a href="https://x.com/MdAfnanHussain" target="_blank">
            <Image
            src={XLogo}
            width={20}
@@ -165,7 +165,7 @@ export default function AppLayout({
            alt="x.com"
            />
             </a>
-            <a href="https://www.linkedin.com/in/md-afnan-hussain/">
+            <a href="https://www.linkedin.com/in/md-afnan-hussain/" target="_blank">
             <Linkedin/>
             </a>
 
