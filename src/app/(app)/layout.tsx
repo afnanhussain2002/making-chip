@@ -12,7 +12,7 @@ import {
   ImageIcon,
   ImagePlus,
   Scan,
-  RectangleEllipsis
+  RectangleEllipsis,
 } from "lucide-react";
 
 const sidebarItems = [
@@ -66,12 +66,12 @@ export default function AppLayout({
             <div className="flex-1">
               <Link href="/" onClick={handleLogoClick}>
                 <div className="btn btn-ghost normal-case text-2xl font-bold tracking-tight cursor-pointer">
-                  ZipVid
+                  Making Chip
                 </div>
               </Link>
             </div>
             <div className="flex-none flex items-center space-x-4">
-              {user && (
+              {user ? (
                 <>
                   <div className="avatar">
                     <div className="w-8 h-8 rounded-full">
@@ -92,6 +92,14 @@ export default function AppLayout({
                   >
                     <LogOutIcon className="h-6 w-6" />
                   </button>
+                </>
+              ) : (
+                <>
+                  <Link href="/image-formats">
+                    <button className=" text-primary font-bold px-6 py-3 rounded-lg shadow-lg border-2 border-primary">
+                      Login
+                    </button>
+                  </Link>
                 </>
               )}
             </div>
