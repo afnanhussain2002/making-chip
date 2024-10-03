@@ -66,7 +66,7 @@ function ImageOptimize() {
     } 
 
   return (
-    <div className="hero min-h-screen">
+    <div className="container mx-auto p-4 max-w-4xl">
       <div className="hero-content flex-col ">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Image Optimization!</h1>
