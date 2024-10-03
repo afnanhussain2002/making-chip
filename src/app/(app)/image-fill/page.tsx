@@ -73,7 +73,7 @@ console.log('uploadedImage',uploadedImage);
     <div className="container mx-auto p-4 max-w-4xl">
       <div className="hero-content flex-col">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Image Background Fill !</h1>
+          <h1 className="text-5xl font-bold">Image Background Fill<span className='text-xs bg-primary px-1 rounded'>beta</span>!</h1>
           <p className="py-6">
             Restore any image to its original state.
           </p>
