@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
+import Image from "next/image";
 
 
 function ImageOptimize() {
@@ -81,7 +82,7 @@ function ImageOptimize() {
         <>
         {
           uploadedImage ? <>
-          <img
+          <Image
             width={imageWidth}
             height={imageHeight}
             src={uploadedImage}
