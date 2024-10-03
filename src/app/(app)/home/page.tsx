@@ -17,26 +17,35 @@ function Home() {
 
 <section className="py-20 bg-transparent">
   <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <Link href={'/image-formats'}>
     <div className="p-6 rounded-lg shadow-lg text-center border border-primary">
       <Share2Icon className='w-16 h-16 mx-auto mb-4'/>
       <h3 className="text-xl font-semibold mb-2">Image Formats</h3>
       <p className="text-primary font-semibold">Convert and manage a wide range of image formats.</p>
     </div>
-    <div className="p-6 rounded-lg shadow-lg text-center border border-primary">
+    
+    </Link>
+  <Link href={'/image-optimize'}>
+  <div className="p-6 rounded-lg shadow-lg text-center border border-primary">
     <ImagePlus className='w-16 h-16 mx-auto mb-4'/>
       <h3 className="text-xl font-semibold mb-2">Optimize</h3>
       <p className="text-primary font-semibold">Reduce image size without losing quality.</p>
     </div>
+  </Link>
+    <Link href={'/image-restore'}>
     <div className="p-6 rounded-lg shadow-lg text-center border border-primary">
     <Scan className='w-16 h-16 mx-auto mb-4'/>
       <h3 className="text-xl font-semibold mb-2">Restore</h3>
       <p className="text-primary font-semibold">Recover and restore damaged images easily.</p>
     </div>
-    <div className="p-6 rounded-lg shadow-lg text-center border border-primary">
+    </Link>
+   <Link href={'/image-fill'}>
+   <div className="p-6 rounded-lg shadow-lg text-center border border-primary">
     <RectangleEllipsis className='w-16 h-16 mx-auto mb-4'/>
       <h3 className="text-xl font-semibold mb-2">Fill</h3>
       <p className="text-primary font-semibold">Fill missing parts of images intelligently.</p>
     </div>
+   </Link>
   </div>
 </section>
 
