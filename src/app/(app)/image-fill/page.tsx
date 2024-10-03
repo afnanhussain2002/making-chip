@@ -1,6 +1,7 @@
 "use client"
 import React,{ useState } from 'react'
 import axios from 'axios'
+import Image from 'next/image';
 // import { CldImage } from 'next-cloudinary'
 
 // Define the social media formats with their respective dimensions and aspect ratios
@@ -83,7 +84,7 @@ console.log('uploadedImage',uploadedImage);
         <>
         {
           uploadedImage ? <>
-          <img
+          <Image
             src={uploadedImage}
             className="w-full"
             alt="Uploaded Image"
