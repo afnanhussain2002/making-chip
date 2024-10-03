@@ -73,9 +73,7 @@ function ImageOptimize() {
           <p className="py-6">
             Welcome to our Image Optimization page! Here, you can easily
             compress and resize images without compromising quality, making them
-            faster to load and more efficient for your website. Optimize your
-            images with just a few clicks to enhance performance and improve
-            user experience.
+            faster to load and more efficient for your website.
           </p>
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl border border-primary">
