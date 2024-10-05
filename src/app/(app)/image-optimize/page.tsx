@@ -18,6 +18,7 @@ function ImageOptimize() {
   // bytes to MB
   const originalSizeInMB = byteSize(originalSize);
   const compressedSizeInMB = byteSize(compressedSize);
+  console.log('original size', originalSizeInMB, "main size", originalSize);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();

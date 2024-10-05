@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
     const file = formData.get("file") as File;
-    const originalSize = formData.get("originalSize") as string;
+    const originalSize = file.size;
     // console.log("File-------", file, originalSize);
 
     if (!file) {
