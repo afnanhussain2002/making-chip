@@ -35,14 +35,14 @@ function Home() {
     <Link href={'/image-restore'}>
     <div className="p-6 rounded-lg shadow-lg text-center border border-primary">
     <Scan className='w-16 h-16 mx-auto mb-4'/>
-      <h3 className="text-xl font-semibold mb-2">Image Quality Improve <span className='text-xs bg-primary px-1 rounded'>beta</span></h3>
+      <h3 className="text-xl font-semibold mb-2">Quality Improve <span className='text-xs bg-primary px-1 rounded'>beta</span></h3>
       <p className="text-primary font-semibold">Recover and restore damaged images easily.</p>
     </div>
     </Link>
    <Link href={'/image-fill'}>
    <div className="p-6 rounded-lg shadow-lg text-center border border-primary">
     <RectangleEllipsis className='w-16 h-16 mx-auto mb-4'/>
-      <h3 className="text-xl font-semibold mb-2">Fill <span className='text-xs bg-primary px-1 rounded'>beta</span></h3>
+      <h3 className="text-xl font-semibold mb-2">Fill background <span className='text-xs bg-primary px-1 rounded'>beta</span></h3>
       <p className="text-primary font-semibold">Fill missing parts of images intelligently.</p>
     </div>
    </Link>
