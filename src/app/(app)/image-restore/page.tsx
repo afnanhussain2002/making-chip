@@ -16,6 +16,7 @@ function ImageOptimize() {
   const [originalImage, setOriginalImage] = useState<string | null>(null);
   const [originalSize, setOriginalSize] = useState<number>(0);
   const [compressedSize, setCompressedSize] = useState<number>(0);
+  const [isDownloading, setIsDownloading] = useState(false);
  
 
 
@@ -61,6 +62,7 @@ function ImageOptimize() {
     const handleDownload = () => {
         if (!uploadedImage) return;
         downloadCounter++;
+        setIsDownloading(true);
         fetch(uploadedImage)
           .then((response) => response.blob())
           .then((blob) => {
@@ -75,6 +77,9 @@ function ImageOptimize() {
           })
           .catch((error) => {
             console.error("Error downloading image:", error);
+          })
+          .finally(() => {
+            setIsDownloading(false);
           });
       };
 
@@ -128,12 +133,9 @@ function ImageOptimize() {
           </div>
         </div>
             {uploadedImage && (
-                 <button
-                 onClick={handleDownload}
-                 className="btn btn-primary"
-               >
-                 Download
-               </button>
+                  <button className="btn btn-primary" onClick={handleDownload} disabled={isDownloading}>
+                  {isDownloading ? "Downloading..." : `Download`}
+              </button>
             )}
       </div>
     </div>
