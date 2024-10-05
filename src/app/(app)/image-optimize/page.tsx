@@ -52,17 +52,17 @@ function ImageOptimize() {
     }
   };
 
+  let downloadCounter = 0;
   const handleDownload = () => {
     if (!imageRef.current) return;
+    downloadCounter++;
     fetch(imageRef.current.src)
       .then((response) => response.blob())
       .then((blob) => {
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
         link.href = url;
-        link.download = `${uploadedImage
-          ?.replace(/\s+/g, "_")
-          .toLowerCase()}.png`;
+        link.download = `makingchip_${downloadCounter}.png`;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
