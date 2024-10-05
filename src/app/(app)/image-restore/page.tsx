@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import byteSize from 'byte-size'
-// import { CldImage } from "next-cloudinary";
+import { CldImage } from "next-cloudinary";
+
 
 
 function ImageOptimize() {
@@ -15,7 +16,7 @@ function ImageOptimize() {
   const [originalImage, setOriginalImage] = useState<string | null>(null);
   const [originalSize, setOriginalSize] = useState<number>(0);
   const [compressedSize, setCompressedSize] = useState<number>(0);
-  // const imageRef = useRef<HTMLImageElement>(null);
+ 
 
 
 // bytes size to MB
@@ -54,6 +55,7 @@ function ImageOptimize() {
       setOriginalImage(fileUrl);
     }
   }
+
 
    let downloadCounter = 0
     const handleDownload = () => {
@@ -102,12 +104,14 @@ function ImageOptimize() {
                 {uploadedImage ? (
                   <div>
                     <h3 className="font-bold">Optimized Image: <span className="bg-primary text-white px-2 rounded">{compressedSizeInMB.toString()}</span></h3>
-                    <Image
+                    <CldImage
                       width={imageWidth}
                       height={imageHeight}
                       src={uploadedImage}
                       className="w-full"
                       alt="Uploaded Image"
+                      enhance
+                      restore
                     />
                  
                   </div>
