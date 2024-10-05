@@ -5,7 +5,7 @@ export default function Loading() {
   return (
     <div className="container mx-auto p-4 max-w-4xl text-center">
       <div className="hero-content">
-      <BeatLoader color="#E779C1" size={30} speedMultiplier={1}/>
+      <BeatLoader color="#E779C1" size={30} speedMultiplier={1} loading={true}/>
       </div>
     </div>
   );
