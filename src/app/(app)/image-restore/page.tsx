@@ -82,7 +82,7 @@ function ImageOptimize() {
     <div className="container mx-auto p-4 max-w-4xl">
       <div className="hero-content flex-col ">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Image Quality Improve!</h1>
+          <h1 className="text-5xl font-bold">Image Quality Improve <span className='text-xs bg-primary px-1 rounded'>beta</span>!</h1>
         </div>
         <div className="flex flex-col justify-center items-center gap-2 max-w-2xl lg:flex-row">
           {originalImage && (
