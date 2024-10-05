@@ -23,7 +23,7 @@ const sidebarItems = [
   { href: "/home", icon: LayoutDashboardIcon, label: "Home Page" },
   { href: "/image-formats", icon: Share2Icon, label: "Image Formats" },
   { href: "/image-optimize", icon: ImagePlus, label: "Image Optimize" },
-  { href: "/image-restore", icon: Scan, label: "Image Restore" },
+  { href: "/image-restore", icon: Scan, label: "Image Improve" },
   { href: "/image-fill", icon: RectangleEllipsis, label: "Image Bg Fill" },
 ];
 
