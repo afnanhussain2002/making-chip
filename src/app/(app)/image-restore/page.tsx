@@ -110,7 +110,6 @@ function ImageOptimize() {
                       src={uploadedImage}
                       className="w-full"
                       alt="Uploaded Image"
-                      enhance
                       restore
                     />
                  
