@@ -6,15 +6,15 @@ import axios from 'axios';
 
 // Define the social media formats with their respective dimensions and aspect ratios
 const socialFormats = {
-    "Generic Portrait (3:4)": { width: 900, height: 1200, aspectRatio: "3:4" }, // Example portrait size
-    "Generic Landscape (4:3)": { width: 1200, height: 900, aspectRatio: "4:3" },
+   " Portrait (9:16)": { width: 1080, height: 1920, aspectRatio: "9:16" }, // Main portrait size
+    " Landscape (16:9)": { width: 1920, height: 1080, aspectRatio: "16:9" },
 };
 
 type SocialFormat = keyof typeof socialFormats;
 
 function ImageFormats() {
     const [uploadedImage, setUploadedImage] = useState<string | null>(null);
-    const [selectedFormat, setSelectedFormat] = useState<SocialFormat>("Generic Portrait (3:4)");
+    const [selectedFormat, setSelectedFormat] = useState<SocialFormat>(" Portrait (9:16)");
     const [isUploading, setIsUploading] = useState(false);
     const [isTransforming, setIsTransforming] = useState(false);
     const [isDownloading, setIsDownloading] = useState(false);
