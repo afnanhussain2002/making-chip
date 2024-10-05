@@ -20,6 +20,7 @@ function ImageFormats() {
     const [selectedFormat, setSelectedFormat] = useState<SocialFormat>("Instagram Square (1:1)");
     const [isUploading,setIsUploading] = useState(false);
     const [isTransforming, setIsTransforming] = useState(false);
+    const [isDownloading, setIsDownloading] = useState(false);
     const imageRef = useRef<HTMLImageElement>(null);
 
     useEffect(() =>{
@@ -61,6 +62,8 @@ function ImageFormats() {
   const handleDownload = () =>{
     if (!imageRef.current) return;
 
+    setIsDownloading(true);
+
     fetch(imageRef.current.src)
     .then((response) => response.blob())
     .then((blob) =>{
@@ -73,6 +76,13 @@ function ImageFormats() {
         document.body.removeChild(link);
         window.URL.revokeObjectURL(url)
     })
+    .catch((error) => {
+      console.error("Error downloading the image:", error);
+      alert("Failed to download image");
+  })
+  .finally(() => {
+      setIsDownloading(false);
+  });
   }
 
   return (
@@ -142,10 +152,10 @@ function ImageFormats() {
             </div>
 
             <div className="card-actions justify-end mt-6">
-              <button className="btn btn-primary" onClick={handleDownload}>
-                Download for {selectedFormat}
-              </button>
-            </div>
+                                <button className="btn btn-primary" onClick={handleDownload} disabled={isDownloading}>
+                                    {isDownloading ? "Downloading..." : `Download for ${selectedFormat}`}
+                                </button>
+                            </div>
           </div>
         )}
       </div>
