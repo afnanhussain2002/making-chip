@@ -79,6 +79,15 @@ function ImageFormats() {
             })
             .finally(() => {
                 setIsDownloading(false);
+                if (uploadedImage) {
+                    axios.delete(`/api/delete-resource/${uploadedImage.split("/").pop()}`)
+                      .then(response => {
+                        console.log("Resource deleted:", response.data);
+                      })
+                      .catch(error => {
+                        console.error("Error deleting resource:", error);
+                      });
+                  }
             });
     };
 
