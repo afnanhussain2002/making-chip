@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import XLogo from "@/images/x-logo.png"
+import Footer from "@/components/Footer";
 
 const sidebarItems = [
   { href: "/home", icon: LayoutDashboardIcon, label: "Home Page" },
@@ -173,6 +174,7 @@ export default function AppLayout({
         </aside>
       </div>
     </div>
+    <Footer/>
     
     </>
   );
