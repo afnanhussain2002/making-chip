@@ -19,10 +19,10 @@ This project is a **Next.js** web application designed to let users upload image
 
 ## 🖼️ **Screenshots**
 
-![Upload Image](./screenshots/upload.png)  
-*Image Upload Interface*
+![Home Page](https://i.ibb.co.com/wzwqzzB/Whats-App-Image-2024-10-02-at-12-35-37-1a020069.jpg)  
+*Home page Interface*
 
-![Comparison View](./screenshots/compare.png)  
+![Comparison View](https://i.ibb.co.com/9wzfxzN/Whats-App-Image-2024-10-05-at-06-26-47-70ba9be1.jpg)  
 *Comparison of Original and Optimized Image*
 
 ---
