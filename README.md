@@ -46,7 +46,7 @@ npm run dev
 ```
 
 ### 4. **Open your browser**:
-Visit [http://localhost:3000](http://localhost:3000) to see the app in action.
+Visit [makingchip.com](https://www.makingchip.com/) to see the app in action.
 
 ---
 
