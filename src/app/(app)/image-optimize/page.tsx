@@ -4,8 +4,8 @@ import { Metadata } from 'next';
 import ImageOptimize from '@/components/ImageOptimize';
 
 export const metadata: Metadata = {
-  title: "Making Chip | Image Format",
-  description: "Create social media images with different formats",
+  title: "Making Chip | Image Optimize",
+  description: "Optimize your images",
 
 };
 
