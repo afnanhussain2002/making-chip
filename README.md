@@ -55,7 +55,7 @@ Visit [http://localhost:3000](http://localhost:3000) to see the app in action.
 - **Next.js** for frontend rendering.
 - **Cloudinary** for image storage and optimization.
 - **Tailwind CSS** for responsive styling.
-- **Multer** for handling file uploads.
+
 
 ---
 
