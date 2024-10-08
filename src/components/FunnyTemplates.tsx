@@ -89,7 +89,7 @@ function FunnyTemplates() {
           <p className="font-bold text-right mt-6 mr-3 text-sm relative top-12">
             {realDate.toDateString()}
           </p>
-          <p className="font-bold opacity-15">makingchip.com</p>
+          <p className="font-bold opacity-15 absolute">makingchip.com</p>
 
           <div className="flex text-[8px] items-center relative top-14 bg-customRed2 justify-center gap-1 p-2 md:text-xs">
             
