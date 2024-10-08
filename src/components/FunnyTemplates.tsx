@@ -2,8 +2,8 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import motuImage from "@/public/motu.png";
-import { StepForward, Facebook, Youtube } from "lucide-react";
 import domtoimage from "dom-to-image";
+import { FaCaretRight, FaFacebook,FaYoutube } from "react-icons/fa";
 
 function FunnyTemplates() {
   const [originalImage, setOriginalImage] = useState<string | null>(null);
@@ -85,25 +85,25 @@ function FunnyTemplates() {
             )}
           </>
         </div>
-        <p className="font-bold text-right mt-6 mr-3 text-sm relative top-10">
+        <p className="font-bold text-right mt-6 mr-3 text-sm relative top-8">
           {realDate.toDateString()}
         </p>
   
-        <div className="flex text-xs items-center relative top-10 bg-customRed2 justify-center gap-1 sm:gap-1 p-2">
+        <div className="grid grid-cols-4 text-xs items-center relative top-8 bg-customRed2 justify-between gap-1 sm:gap-1 p-2">
   <img
     src="https://i.ibb.co.com/2sqWQSL/jomuna-logo.png"
     alt="img"
-    className="w-32"
+    className="w-24 lg:w-32"
   />
-  <div className="flex sm:gap-1">
+  <div className="flex gap-1">
     <p className="flex items-center">
-      <StepForward /> www.jomuna.tv
+      <FaCaretRight /> www.jomuna.tv
     </p>
     <p className="flex items-center">
-      <Facebook /> jomunatelevision
+      <FaFacebook /> jomunatelevision
     </p>
     <p className="flex items-center">
-      <Youtube /> jomunatvbd
+      <FaYoutube /> jomunatvbd
     </p>
   </div>
 </div>
