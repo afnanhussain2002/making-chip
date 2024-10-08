@@ -1,5 +1,3 @@
-// pages/image-formats.tsx
-
 import React from 'react';
  // Assuming your component is in a components folder
 import { Metadata } from 'next';
