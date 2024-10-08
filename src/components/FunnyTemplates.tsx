@@ -11,6 +11,7 @@ function FunnyTemplates() {
   const [isDownloading, setIsDownloading] = useState(false);
   const [text, setText] = useState<string>("Inter Your Text Here");
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   
   const words = text?.split(' ');
   const lastWord = words?.pop();
@@ -34,6 +35,11 @@ function FunnyTemplates() {
     setText(text);
     return;
   };
+
+  if (words.length > 120) {
+    setError("Text should be less than 120 characters");
+    return;
+  }
 
   const handleDownload = async () => {
     if (!imagesLoaded) return;
@@ -75,7 +81,7 @@ function FunnyTemplates() {
               onLoadingComplete={() => setImagesLoaded(true)}
             ></Image>
           </div>
-          <div className="font-bold text-center m-3 text-xl">
+          <div className="font-bold text-center m-3 text-sm">
          <>
       {words?.map((word, index) => (
         <span key={index}>{word} </span>
@@ -86,10 +92,10 @@ function FunnyTemplates() {
          
          </>
     </div>
-          <p className="font-bold text-right mt-6 mr-3 text-sm relative top-12">
+          <p className="font-bold text-right mt-6 mr-3 text-xs relative top-12">
             {realDate.toDateString()}
           </p>
-          <p className="font-bold opacity-15 absolute">makingchip.com</p>
+          <p className="font-bold opacity-15 absolute top-3">makingchip.com</p>
 
           <div className="flex text-[8px] items-center relative top-14 bg-customRed2 justify-center gap-1 p-2 md:text-xs">
             
@@ -142,6 +148,7 @@ function FunnyTemplates() {
             className="input input-bordered input-primary w-full max-w-xs"
           />
         </form>
+        <p className="text-red-500 font-bold">{error}</p>
         
       </div>
     </div>
