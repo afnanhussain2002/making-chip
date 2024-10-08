@@ -27,6 +27,9 @@ export default function RootLayout({
   return (
    <ClerkProvider>
      <html lang="en" >
+     <head>
+    <meta name="google-site-verification" content="O5p1N30N-if12YTterX8Ozmw3693-QCw8gCjefcTVIY" />
+    </head>
       <body
       data-theme={"synthwave"}
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
