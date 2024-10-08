@@ -109,6 +109,23 @@ export default function AppLayout({
                 </>
               )}
             </div>
+            <div className="flex justify-center items-center gap-4">
+            <a href="https://www.facebook.com/iamafnanhussain" target="_blank">
+            <Facebook/>
+            </a>
+            <a href="https://x.com/MdAfnanHussain" target="_blank">
+           <Image
+           src={XLogo}
+           width={20}
+           height={30}
+           alt="x.com"
+           />
+            </a>
+            <a href="https://www.linkedin.com/in/md-afnan-hussain/" target="_blank">
+            <Linkedin/>
+            </a>
+
+          </div>
           </div>
         </header>
         {/* Page content */}
@@ -155,7 +172,7 @@ export default function AppLayout({
           )}
           <div className="flex justify-center items-center gap-4">
             <p className="font-bold">Follow us:</p>
-            <a href="https://www.facebook.com/@afnan.hussain.908" target="_blank">
+            <a href="https://www.facebook.com/iamafnanhussain" target="_blank">
             <Facebook/>
             </a>
             <a href="https://x.com/MdAfnanHussain" target="_blank">
