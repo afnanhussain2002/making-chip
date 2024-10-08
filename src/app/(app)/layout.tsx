@@ -111,7 +111,7 @@ export default function AppLayout({
                 </>
               )}
             </div>
-            <div className="flex justify-center items-center gap-4 ml-4">
+            <div className="hidden lg:flex justify-center items-center gap-4 ml-4">
             <a href="https://www.facebook.com/iamafnanhussain" target="_blank">
             <Facebook/>
             </a>
