@@ -71,7 +71,7 @@ function FunnyTemplates() {
               alt="image"
               width={300}
               height={300}
-              className="w-full h-80 object-cover object-center"
+              className="w-full h-80 object-cover object-top"
               onLoadingComplete={() => setImagesLoaded(true)}
             ></Image>
           </div>
