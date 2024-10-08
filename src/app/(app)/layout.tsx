@@ -15,6 +15,7 @@ import {
   RectangleEllipsis,
   Facebook,
   Linkedin,
+  SmilePlus
 } from "lucide-react";
 import Image from "next/image";
 import XLogo from "@/images/x-logo.png"
@@ -26,6 +27,7 @@ const sidebarItems = [
   { href: "/image-optimize", icon: ImagePlus, label: "Image Optimize" },
   { href: "/image-restore", icon: Scan, label: "Image Improve" },
   { href: "/image-fill", icon: RectangleEllipsis, label: "Image Bg Fill" },
+  { href: "/funny-templates", icon: SmilePlus, label: "Funny Templates" },
 ];
 
 export default function AppLayout({
