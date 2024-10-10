@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "Image Format | Making Chip  ",
   description: "Create social media images with different formats",
-  keywords:["Social Size", "Social Media", "Image Format", "Make Chip"],
+  keywords:["Social Size", "Social Media", "Image Format", "Making Chip"],
 
 };
 

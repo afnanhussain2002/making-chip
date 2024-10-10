@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "Image Restore | Making Chip",
   description: "Restore little bit blur image to original",
-  keywords: ["imageRestore", "Image Restore", "Ai Image Restore", "Make Chip"],
+  keywords: ["imageRestore", "Image Restore", "Ai Image Restore", "Making Chip"],
 
 };
 
