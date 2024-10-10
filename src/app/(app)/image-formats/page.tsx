@@ -4,8 +4,9 @@ import ImageFormats from '@/components/ImageFormats'; // Assuming your component
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Making Chip | Image Format",
+  title: "Image Format | Making Chip  ",
   description: "Create social media images with different formats",
+  keywords:["Social Size", "Social Media", "Image Format", "Make Chip"],
 
 };
 
