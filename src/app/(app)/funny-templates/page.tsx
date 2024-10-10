@@ -6,6 +6,7 @@ import FunnyTemplates from '@/components/FunnyTemplates';
 export const metadata: Metadata = {
   title: "Making Chip | Funny Templates",
   description: "Fun with templates",
+  keywords: ["templates", "funny", "fun"],
 
 };
 
