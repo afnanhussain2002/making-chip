@@ -17,7 +17,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.makingchip.com"),
   title: "Making Chip - Ai Image Optimize",
-  description: "You can optimize your image, fill image background using AI, and restore little bit blur image to original and much more.",
+  description: "You can optimize your image, fill image background using AI, and much more.",
   openGraph:{
     title: "Making Chip",
     description: "You can optimize your image, fill image background using AI, and restore little bit blur image to original and much more.",
