@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import FunnyTemplates from '@/components/FunnyTemplates';
 
 export const metadata: Metadata = {
-  title: "Funny Templates | Making Chip ",
+  title: "Funny Templates | Making Chip - Ai Image Optimize ",
   description: "Fun with templates",
   keywords: ["templates", "funny", "fun", "Making Chip"],
 

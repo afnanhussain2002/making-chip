@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import ImageOptimize from '@/components/ImageOptimize';
 
 export const metadata: Metadata = {
-  title: "Image Optimize | Making Chip",
+  title: "Image Optimize | Making Chip - Ai Image Optimize",
   description: "Optimize your images",
   keywords: ["imageOptimize", "Image Optimize", "Ai Image Optimize", "Making Chip"],
 

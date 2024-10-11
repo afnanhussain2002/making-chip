@@ -4,7 +4,7 @@ import ImageRestore from '@/components/ImageRestore'; // Assuming your component
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Image Restore | Making Chip",
+  title: "Image Restore | Making Chip - Ai Image Optimize",
   description: "Restore little bit blur image to original",
   keywords: ["imageRestore", "Image Restore", "Ai Image Restore", "Making Chip"],
 

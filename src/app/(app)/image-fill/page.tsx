@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 import ImageBgFill from '@/components/ImageBgFill';
 
 export const metadata: Metadata = {
-  title: "Making Chip | Image Bg Fill",
+  title: "Image Fill | Making Chip - Ai Image Optimize",
   description: "Fill up the image background",
   keywords:["imageFill", "Image Background Fill", "Ai Image Fill,", "Making Chip"],
 
