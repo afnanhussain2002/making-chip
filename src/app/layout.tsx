@@ -17,6 +17,13 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Making Chip",
   description: "Image optimize platform",
+  openGraph:{
+    title: "Making Chip",
+    description: "Image optimize platform",
+    url: "https://www.makingchip.com",
+    type:"website",
+    locale:"en-US",
+  }
 };
 
 export default function RootLayout({
