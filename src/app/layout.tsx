@@ -15,6 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.makingchip.com"),
   title: "Making Chip - Ai Image Optimize",
   description: "Image optimize platform",
   openGraph:{
