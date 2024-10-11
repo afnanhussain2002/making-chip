@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: "You can optimize your image, fill image background using AI, and much more.",
   openGraph:{
     title: "Making Chip",
-    description: "You can optimize your image, fill image background using AI, and restore little bit blur image to original and much more.",
+    description: "You can optimize your image, fill image background using AI, and much more.",
     url: "https://www.makingchip.com",
     type:"website",
     locale:"en-US",
