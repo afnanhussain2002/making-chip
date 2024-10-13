@@ -51,6 +51,7 @@ export default function RootLayout({
   gtag('config', 'G-FFJ0T2MWJS');`
   }
 </Script>
+
     </head>
       <body
       data-theme={"synthwave"}
