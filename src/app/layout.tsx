@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Script from "next/script";
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -41,16 +43,8 @@ export default function RootLayout({
     <meta name="google-site-verification" content="O5p1N30N-if12YTterX8Ozmw3693-QCw8gCjefcTVIY" />
     <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8402742608812827"
      crossOrigin="anonymous"></Script>
-     <Script async src="https://www.googletagmanager.com/gtag/js?id=G-FFJ0T2MWJS"></Script>
-<Script id="google-analytics">
-  {
-    `window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FFJ0T2MWJS');`
-  }
-</Script>
+     <GoogleAnalytics gaId="G-FFJ0T2MWJS"/>
+<GoogleTagManager gtmId="GTM-M5QG48T6"/>
 
     </head>
       <body
