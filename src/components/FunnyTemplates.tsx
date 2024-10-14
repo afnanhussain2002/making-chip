@@ -94,7 +94,7 @@ function FunnyTemplates() {
               ></Image>
             </div>
        
-          <div className="font-bold text-center m-3 text-xl">
+          <div className="font-bold text-center m-3 text-base">
             <>
               {words?.map((word, index) => (
                 <span key={index}>{word} </span>
