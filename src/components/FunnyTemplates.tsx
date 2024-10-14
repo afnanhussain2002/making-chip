@@ -113,7 +113,7 @@ function FunnyTemplates() {
           </p>
           <p className="font-bold opacity-15 absolute top-3">makingchip.com</p>
 
-          <div className="flex text-[8px] items-center relative top-14 bg-customRed2 justify-center gap-1 p-2 md:text-xs">
+          <div className="flex text-[8px] items-center relative top-12 bg-customRed2 justify-center gap-1 p-2 md:text-xs">
             
             <img
               src="https://i.ibb.co.com/2sqWQSL/jomuna-logo.png"
