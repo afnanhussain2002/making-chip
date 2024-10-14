@@ -1,10 +1,9 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import makingChip from "../app/opengraph-image.png";
-import { FaCaretRight, FaFacebook, FaYoutube } from "react-icons/fa";
+import motuImage from "@/public/motu.png";
+import { FaCaretRight, FaFacebook,FaYoutube } from "react-icons/fa";
 import domtoimage from "dom-to-image";
-
 
 function FunnyTemplates() {
   const [originalImage, setOriginalImage] = useState<string | null>(null);
@@ -12,9 +11,10 @@ function FunnyTemplates() {
   const [isDownloading, setIsDownloading] = useState(false);
   const [text, setText] = useState<string>("Inter Your Text Here");
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [imagePosition, setImagePosition] = useState<boolean>(true);
-
-  const words = text?.split(" ");
+  
+  const words = text?.split(' ');
   const lastWord = words?.pop();
   const realDate = new Date();
 
@@ -29,12 +29,19 @@ function FunnyTemplates() {
     return;
   };
 
+
   const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const text = e.target.value;
     setText(text);
     return;
   };
+
+  if (words.length > 120) {
+    setError("Text should be less than 120 characters");
+    return;
+  }
+
   let downloadCounter = 0;
 
   const handleDownload = async () => {
@@ -72,9 +79,7 @@ function FunnyTemplates() {
         console.error("Oops, something went wrong!", error);
         setIsDownloading(false);
       });
-  };
-
-  console.log(imagePosition);
+  }
 
   return (
     <div>
@@ -82,31 +87,34 @@ function FunnyTemplates() {
 
       <div className="flex justify-center items-center mt-5">
         <div id="template" className="w-[500px] h-[500px] bg-customRed">
-        
-            <div className="border-4 border-customRed">
-              <Image
-                src={originalImage ? originalImage : makingChip}
-                alt="image"
-                width={300}
-                height={300}
-                className={`w-full h-80 object-cover ${imagePosition ? "object-center" : "object-top"}`}
-                onLoadingComplete={() => setImagesLoaded(true)}
-              ></Image>
-            </div>
-       
-          <div className="font-bold text-center m-3 text-base">
-            <>
-              {words?.map((word, index) => (
-                <span key={index}>{word} </span>
-              ))}
-              {lastWord && <span style={{ color: "yellow" }}>{lastWord}</span>}
-            </>
+          <div className="border-4 border-customRed">
+            <Image
+              src={originalImage ? originalImage : motuImage}
+              alt="image"
+              width={300}
+              height={300}
+              className={`w-full h-80 object-cover ${imagePosition ? "object-center" : "object-top"}`}
+              onLoadingComplete={() => setImagesLoaded(true)}
+            ></Image>
           </div>
-          <p className="font-bold text-right mt-6 mr-3 text-sm relative top-12">
+          <div className="font-bold text-center m-3 text-sm">
+         <>
+      {words?.map((word, index) => (
+        <span key={index}>{word} </span>
+      ))}
+      {lastWord && (
+        <span style={{ color: 'yellow' }}>{lastWord}</span>
+      )}
+         
+         </>
+    </div>
+          <p className="font-bold text-right mt-6 mr-3 text-xs relative top-12">
             {realDate.toDateString()}
           </p>
+          <p className="font-bold opacity-15 absolute top-3">makingchip.com</p>
 
           <div className="flex text-[8px] items-center relative top-14 bg-customRed2 justify-center gap-1 p-2 md:text-xs">
+            
             <img
               src="https://i.ibb.co.com/2sqWQSL/jomuna-logo.png"
               alt="img"
@@ -115,43 +123,33 @@ function FunnyTemplates() {
               className="w-20 md:w-32 "
             />
             <div className="grid grid-cols-3 gap-1">
-              <p className="flex items-center">
-                {" "}
-                <FaCaretRight /> www.jomuna.tv
-              </p>
-              <p className="flex items-center gap-1">
-                <FaFacebook />
-                jomunatelevision
-              </p>
-              <p className="flex gap-1 items-center">
-                <FaYoutube />
-                jomunatvbd
-              </p>
+            <p className="flex items-center">
+              {" "}
+              <FaCaretRight /> www.jomuna.tv
+            </p>
+            <p className="flex items-center gap-1">
+              <FaFacebook />
+              jomunatelevision
+            </p>
+            <p className="flex gap-1 items-center">
+              <FaYoutube />
+              jomunatvbd
+            </p>
             </div>
           </div>
         </div>
       </div>
-   
-
-    
       <div className="text-center">
-        <button
+      <button
           onClick={handleDownload}
           className="btn btn-primary mt-20"
           disabled={isDownloading}
         >
           {isDownloading ? "Downloading..." : "Download as Image"}
         </button>
-        <br />
 
-      <button
-          onClick={() => setImagePosition((prev) => !prev)}
-          className="btn btn-primary btn-sm mt-1"
-        >
-          Change Image Position
-        </button>
       </div>
-      <div className="mt-10">
+      <div className="mt-20">
         <form className="flex flex-col justify-center items-center gap-2 ">
           <input
             type="file"
@@ -166,6 +164,8 @@ function FunnyTemplates() {
             className="input input-bordered input-primary w-full max-w-xs"
           />
         </form>
+        <p className="text-red-500 font-bold">{error}</p>
+        
       </div>
     </div>
   );
