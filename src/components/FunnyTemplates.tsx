@@ -131,7 +131,7 @@ function FunnyTemplates() {
           </div>
         </div>
       </div>
-      <div className="text-center">
+      <div className="text-center mt-1">
       <button
           onClick={() => setImagePosition((prev) => !prev)}
           className="btn btn-primary btn-sm mt-1"
