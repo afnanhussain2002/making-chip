@@ -135,12 +135,6 @@ function FunnyTemplates() {
 
     
       <div className="text-center">
-      <button
-          onClick={() => setImagePosition((prev) => !prev)}
-          className="btn btn-primary btn-sm mt-1"
-        >
-          Change Image Position
-        </button>
         <button
           onClick={handleDownload}
           className="btn btn-primary mt-20"
@@ -150,6 +144,12 @@ function FunnyTemplates() {
         </button>
         <br />
 
+      <button
+          onClick={() => setImagePosition((prev) => !prev)}
+          className="btn btn-primary btn-sm mt-1"
+        >
+          Change Image Position
+        </button>
       </div>
       <div className="mt-10">
         <form className="flex flex-col justify-center items-center gap-2 ">
