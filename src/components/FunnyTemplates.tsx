@@ -41,29 +41,40 @@ function FunnyTemplates() {
     return;
   }
 
+  let downloadCounter = 0;
+
   const handleDownload = async () => {
+ downloadCounter++;
     if (!imagesLoaded) return;
     const node = await document.getElementById("template");
     if (!node) {
       console.error("Template node not found.");
       return;
     }
-
+  
     setIsDownloading(true);
+    const scale = 2; // Increase this value for higher resolution
+    const style = {
+      transform: `scale(${scale})`,
+      transformOrigin: 'top left',
+      width: node.offsetWidth + "px",
+      height: node.offsetHeight + "px",
+    };
+  
     domtoimage
-      .toPng(node)
+      .toPng(node, { width: node.offsetWidth * scale, height: node.offsetHeight * scale, style })
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = "makingchip.png";
+        link.download = `makingchip_${downloadCounter}.png`;
         link.href = dataUrl;
         link.click();
         setIsDownloading(false);
       })
       .catch((error) => {
-        console.error("oops, something went wrong!", error);
+        console.error("Oops, something went wrong!", error);
         setIsDownloading(false);
       });
-  };
+  };;
 
   return (
     <div>
