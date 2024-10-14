@@ -147,6 +147,13 @@ function FunnyTemplates() {
         >
           {isDownloading ? "Downloading..." : "Download as Image"}
         </button>
+        <br />
+        <button
+          onClick={() => setImagePosition((prev) => !prev)}
+          className="btn btn-primary btn-sm mt-1"
+        >
+          Change Image Position
+        </button>
 
       </div>
       <div className="mt-20">
@@ -161,6 +168,7 @@ function FunnyTemplates() {
             type="text"
             onChange={handleTextChange}
             placeholder="Enter text"
+            maxLength={120}
             className="input input-bordered input-primary w-full max-w-xs"
           />
         </form>
