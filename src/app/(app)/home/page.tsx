@@ -10,7 +10,7 @@ function Home() {
   <div className="container mx-auto text-center">
     <h1 className="text-4xl font-bold mb-4">Effortless Image Management and Optimization</h1>
     <p className="mb-6">Optimize, format, and restore your images with just a few clicks.</p>
-    <Link href="/image-formats">
+    <Link href="/funny-templates">
     <button className=" text-primary font-bold px-6 py-3 rounded-lg shadow-lg border-2 border-primary">Get Started</button>
     </Link>
   </div>
