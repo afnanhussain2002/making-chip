@@ -12,7 +12,6 @@ function PostTemplate() {
   const [isDownloading, setIsDownloading] = useState(false);
   const [name, setName] = useState<string>("Making Chip");
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const [value, setValue] = useState('');
 
   const modules = {
@@ -154,7 +153,7 @@ function PostTemplate() {
           >
           </ReactQuill>
         </form>
-        <p className="text-red-500 font-bold">{error}</p>
+        
         
       </div>
     </div>
