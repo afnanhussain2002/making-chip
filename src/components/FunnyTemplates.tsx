@@ -164,7 +164,7 @@ function FunnyTemplates() {
             className="input input-bordered input-primary w-full max-w-xs"
           />
         </form>
-        <p className="text-red-500 font-bold">{error}</p>
+       
         
       </div>
     </div>
