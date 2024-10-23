@@ -6,80 +6,73 @@ import { FaCaretRight, FaFacebook,FaYoutube } from "react-icons/fa";
 import domtoimage from "dom-to-image";
 
 function FunnyTemplates() {
-  const [originalImage, setOriginalImage] = useState<string | null>(null);
-  // const [isUploading, setIsUploading] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
-  const [text, setText] = useState<string>("Inter Your Text Here");
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [imagePosition, setImagePosition] = useState<boolean>(true);
-  
-  const words = text?.split(' ');
-  const lastWord = words?.pop();
-  const realDate = new Date();
+    const [originalImage, setOriginalImage] = useState<string | null>(null);
+    const [text, setText] = useState<string>("Inter Your Text Here");
+    const [imagesLoaded, setImagesLoaded] = useState(false);
+    const [imagePosition, setImagePosition] = useState<boolean>(true);
+    const realDate = new Date();
+    const words = text?.split(' ');
+    const lastWord = words?.pop();
 
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    // setIsUploading(true);
-    const formData = new FormData();
-    formData.append("file", file);
-    const fileUrl = URL.createObjectURL(file);
-    setOriginalImage(fileUrl);
-    return;
-  };
-
-
-  const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    const text = e.target.value;
-    setText(text);
-    return;
-  };
-
-  if (words.length > 120) {
-    setError("Text should be less than 120 characters");
-    return;
-  }
-
-  let downloadCounter = 0;
-
-  const handleDownload = async () => {
-    downloadCounter++;
-    if (!imagesLoaded) return;
-    const node = await document.getElementById("template");
-    if (!node) {
-      console.error("Template node not found.");
-      return;
-    }
-
-    setIsDownloading(true);
-    const scale = 2; // Increase this value for higher resolution
-    const style = {
-      transform: `scale(${scale})`,
-      transformOrigin: "top left",
-      width: node.offsetWidth + "px",
-      height: node.offsetHeight + "px",
-    };
-
-    domtoimage
-      .toPng(node, {
-        width: node.offsetWidth * scale,
-        height: node.offsetHeight * scale,
-        style,
-      })
-      .then((dataUrl) => {
-        const link = document.createElement("a");
-        link.download = `makingchip_${downloadCounter}.png`;
-        link.href = dataUrl;
-        link.click();
-        setIsDownloading(false);
-      })
-      .catch((error) => {
-        console.error("Oops, something went wrong!", error);
-        setIsDownloading(false);
-      });
-  }
+    const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+        // setIsUploading(true);
+        const formData = new FormData();
+        formData.append("file", file);
+        const fileUrl = URL.createObjectURL(file);
+        setOriginalImage(fileUrl);
+        return;
+      };
+    
+    
+      const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        e.preventDefault();
+        const text = e.target.value;
+        setText(text);
+        return;
+      };
+    
+    
+      let downloadCounter = 0;
+    
+      const handleDownload = async (nodeId: string) => {
+        downloadCounter++;
+        if (!imagesLoaded) return;
+        const node = await document.getElementById(nodeId);
+        if (!node) {
+          console.error("Template node not found.");
+          return;
+        }
+    
+        setIsDownloading(true);
+        const scale = 2; // Increase this value for higher resolution
+        const style = {
+          transform: `scale(${scale})`,
+          transformOrigin: "top left",
+          width: node.offsetWidth + "px",
+          height: node.offsetHeight + "px",
+        };
+    
+        domtoimage
+          .toPng(node, {
+            width: node.offsetWidth * scale,
+            height: node.offsetHeight * scale,
+            style,
+          })
+          .then((dataUrl) => {
+            const link = document.createElement("a");
+            link.download = `makingchip_${downloadCounter}.png`;
+            link.href = dataUrl;
+            link.click();
+            setIsDownloading(false);
+          })
+          .catch((error) => {
+            console.error("Oops, something went wrong!", error);
+            setIsDownloading(false);
+          });
+      }
 
   return (
     <div>
