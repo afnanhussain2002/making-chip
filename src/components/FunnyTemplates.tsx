@@ -1,12 +1,14 @@
-"use client";
-import Image from "next/image";
-import React, { useState } from "react";
-import motuImage from "@/public/motu.png";
-import { FaCaretRight, FaFacebook,FaYoutube } from "react-icons/fa";
-import domtoimage from "dom-to-image";
+"use client"
+import Image from 'next/image'
+import React, { useState } from 'react'
+import Makingchip from "@/app/opengraph-image.png";
+import { FaCaretRight, FaFacebook, FaYoutube } from 'react-icons/fa';
+import AllTemplates from '@/components/AllTemplates';
+import domtoimage from 'dom-to-image';
+
 
 function FunnyTemplates() {
-  const [isDownloading, setIsDownloading] = useState(false);
+    const [isDownloading, setIsDownloading] = useState(false);
     const [originalImage, setOriginalImage] = useState<string | null>(null);
     const [text, setText] = useState<string>("Inter Your Text Here");
     const [imagesLoaded, setImagesLoaded] = useState(false);
@@ -73,24 +75,48 @@ function FunnyTemplates() {
             setIsDownloading(false);
           });
       }
-
   return (
-    <div>
-      <h3 className="text-3xl text-center font-bold">Funny Templates</h3>
+    <>
+    <main className='grid grid-cols-3 gap-1'>
+        <div className="w-[200px] h-[200px] relative bg-[url('../public/BokhriTemplate.png')] bg-cover">
+  <div className='relative'>
+  <Image
+              src={originalImage ? originalImage : Makingchip}
+              alt="image"
+              width={260}
+              height={300}
+              className=" w-28 h-20 object-cover object-center rounded-3xl relative top-[37px] left-[34px]"
+              onLoadingComplete={() => setImagesLoaded(true)}
+              
+            >
 
-      <div className="flex justify-center items-center mt-5">
-        <div id="template" className="w-[500px] h-[500px] bg-customRed">
+            </Image>
+
+  
+  </div>
+ 
+  <p className="font-bold text-right mt-6 text-[6px] relative top-20 right-8">
+            {realDate.toDateString()}
+          </p>
+          <div className="font-bold text-center m-3 text-[10px] text-[#1A103D] relative top-8">
+      <p>{text}</p>
+    </div>
+</div>
+
+{/* 2nd */}
+
+<div className="w-[200px] h-[200px] bg-customRed">
           <div className="border-4 border-customRed">
             <Image
-              src={originalImage ? originalImage : motuImage}
+              src={originalImage ? originalImage : Makingchip}
               alt="image"
               width={300}
               height={300}
-              className={`w-full h-80 object-cover ${imagePosition ? "object-center" : "object-top"}`}
+              className={`w-full h-20 object-cover ${imagePosition ? "object-center" : "object-top"}`}
               onLoadingComplete={() => setImagesLoaded(true)}
             ></Image>
           </div>
-          <div className="font-bold text-center m-3 text-sm">
+          <div className="font-bold text-center m-3 text-[10px]">
          <>
       {words?.map((word, index) => (
         <span key={index}>{word} </span>
@@ -101,18 +127,18 @@ function FunnyTemplates() {
          
          </>
     </div>
-          <p className="font-bold text-right mt-6 mr-3 text-xs relative top-12">
+          <p className="font-bold text-right mt-6 mr-3 text-[6px] relative top-6">
             {realDate.toDateString()}
           </p>
 
-          <div className="flex text-[8px] items-center relative top-12 bg-customRed2 justify-center gap-1 p-2 md:text-xs">
+          <div className="flex text-[6px] items-center relative top-6 bg-customRed2 justify-center gap-1 p-1">
             
             <img
               src="https://i.ibb.co.com/2sqWQSL/jomuna-logo.png"
               alt="img"
               width={100}
               height={50}
-              className="w-20 md:w-32 "
+              className="w-10"
             />
             <div className="grid grid-cols-3 gap-1">
             <p className="flex items-center">
@@ -130,15 +156,28 @@ function FunnyTemplates() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="text-center">
-      <button
-          onClick={handleDownload}
-          className="btn btn-primary mt-20"
-          disabled={isDownloading}
-        >
-          {isDownloading ? "Downloading..." : "Download as Image"}
-        </button>
+
+    </main>
+        {/* inputs */}
+
+        <div className="text-center">
+     
+       {/* You can open the modal using document.getElementById('ID').showModal() method */}
+       <button className="btn btn btn-primary mt-20" onClick={() => (document.getElementById('my_modal_4') as HTMLDialogElement)?.showModal()}>Ready for Download</button>
+<dialog id="my_modal_4" className="modal overflow-y-auto overflow-x-auto">
+  <div className="modal-box w-11/12 max-w-5xl ">
+    <h3 className="font-bold text-lg">Hello!</h3>
+    <p className="py-4">Click the button below to close</p>
+    <div className="modal-action">
+      <form method="dialog">
+        {/* if there is a button, it will close the modal */}
+        <AllTemplates originalImage={originalImage} text={text} setImagesLoaded={setImagesLoaded} realDate={realDate} isDownloading={isDownloading} handleDownload={handleDownload} imagePosition={imagePosition} />
+       
+        <button className="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
         <br />
         <button
           onClick={() => setImagePosition((prev) => !prev)}
@@ -160,15 +199,16 @@ function FunnyTemplates() {
             type="text"
             onChange={handleTextChange}
             placeholder="Enter text"
-            maxLength={120}
+            maxLength={71}
             className="input input-bordered input-primary w-full max-w-xs"
           />
         </form>
-       
+      
         
       </div>
-    </div>
-  );
+    
+    </>
+  )
 }
 
-export default FunnyTemplates;
+export default FunnyTemplates
