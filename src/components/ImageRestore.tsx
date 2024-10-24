@@ -97,6 +97,7 @@ function ImageImprove() {
       <div className="hero-content flex-col ">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Image Quality Improve <span className='text-xs bg-primary px-1 rounded'>beta</span>!</h1>
+          <p className="w-3/4 mx-auto mt-4 text-center">Upload an image which was a little bit blur and you can get it clean. Simply click on choose file and upload blur image.</p>
         </div>
         <div className="flex flex-col justify-center items-center gap-2 max-w-2xl lg:flex-row">
           {originalImage && (
