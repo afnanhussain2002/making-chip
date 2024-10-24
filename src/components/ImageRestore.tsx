@@ -7,7 +7,7 @@ import { CldImage } from "next-cloudinary";
 
 
 
-function ImageOptimize() {
+function ImageImprove() {
 
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [isUploading, setIsUploading] = useState(false);
@@ -151,4 +151,4 @@ function ImageOptimize() {
   );
 }
 
-export default ImageOptimize;
+export default ImageImprove;
