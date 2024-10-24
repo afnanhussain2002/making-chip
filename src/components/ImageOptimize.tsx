@@ -92,8 +92,8 @@ function ImageOptimize() {
     <div className="container mx-auto p-4 max-w-4xl">
       <div className="hero-content flex-col ">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Image Optimization!</h1>
-          <p className="py-6">
+          <h1 className="text-5xl font-bold text-center">Image Optimization!</h1>
+          <p className="w-3/4 mx-auto mt-4 text-center">
             Welcome to our Image Optimization page! Here, you can easily
             compress and resize images without compromising quality, making them
             faster to load and more efficient for your website.

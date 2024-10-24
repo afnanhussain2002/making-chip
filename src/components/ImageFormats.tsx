@@ -99,8 +99,9 @@ function ImageFormats() {
   return (
     <div className="container mx-auto p-4 max-w-4xl">
       <h1 className="text-3xl font-bold mb-6 text-center">
-        Social Media Image Creator
+        Social Media Image Formats
       </h1>
+      <p className="w-3/4 mx-auto mt-4 text-center">Upload any image and change the social formats of that image. You can select facebook cover, twitter or X post, Instagram image formats and much more.</p>
 
       <div className="card">
         <div className="card-body">
