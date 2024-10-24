@@ -83,6 +83,7 @@ function PostTemplate() {
   return (
     <div>
       <h3 className="text-3xl text-center font-bold">Post Template</h3>
+      <p className="w-3/4 mx-auto mt-4 text-center">Upload your Image and Enter your name. Then Write something and download it as image. You can also change the color of post text. </p>
       <div className="flex justify-center mt-4">
     <div id="templatePost" className="text-gray-800 bg-white max-w-md w-full p-4 rounded-xl h-80 relative">
      <div className="flex">
