@@ -2,26 +2,21 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useClerk, useUser } from "@clerk/nextjs";
 import {
   LogOutIcon,
-  MenuIcon,
   LayoutDashboardIcon,
   Share2Icon,
   ImageIcon,
   ImagePlus,
   Scan,
   RectangleEllipsis,
-  Facebook,
-  Linkedin,
   SmilePlus,
-  Milestone,
-  ListCollapse
+  Milestone
 } from "lucide-react";
-import Image from "next/image";
-import XLogo from "@/images/x-logo.png"
-import Footer from "@/components/Footer";
+
+
 
 const sidebarItems = [
   { href: "/home", icon: LayoutDashboardIcon, label: "Home Page" },
@@ -31,7 +26,7 @@ const sidebarItems = [
   { href: "/image-fill", icon: RectangleEllipsis, label: "Image Bg Fill" },
   { href: "/funny-templates", icon: SmilePlus, label: "Funny Templates" },
   { href: "/post-template", icon: Milestone, label: "Post Template" },
-  { href: "/details-about", icon: ListCollapse, label: "Details About Us" }
+  { href: "/details-about", icon: Milestone, label: "Details Blog" },
 ];
 
 export default function AppLayout({
@@ -41,13 +36,10 @@ export default function AppLayout({
 }>) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
   const { signOut } = useClerk();
   const { user } = useUser();
 
-  const handleLogoClick = () => {
-    router.push("/");
-  };
+ 
 
   const handleSignOut = async () => {
     await signOut();
@@ -65,75 +57,7 @@ export default function AppLayout({
       />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <header className="w-full bg-base-200">
-          <div className="navbar max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex-none lg:hidden">
-              <label
-                htmlFor="sidebar-drawer"
-                className="btn btn-square btn-ghost drawer-button"
-              >
-                <MenuIcon />
-              </label>
-            </div>
-            <div className="flex-1">
-              <Link href="/" onClick={handleLogoClick}>
-                <div className="btn btn-ghost normal-case text-2xl font-bold tracking-tight cursor-pointer">
-                  Making Chip
-                </div>
-              </Link>
-            </div>
-            <div className="flex-none flex items-center space-x-4">
-              {user ? (
-                <>
-                  <div className="avatar">
-                    <div className="w-8 h-8 rounded-full">
-                      <img
-                        src={user.imageUrl}
-                        alt={
-                          user.username || user.emailAddresses[0].emailAddress
-                        }
-                      />
-                    </div>
-                  </div>
-                  <span className="text-sm truncate max-w-xs lg:max-w-md">
-                    {user.username || user.emailAddresses[0].emailAddress}
-                  </span>
-                  <button
-                    onClick={handleSignOut}
-                    className="btn btn-ghost btn-circle"
-                  >
-                    <LogOutIcon className="h-6 w-6" />
-                  </button>
-                </>
-              ) : (
-                <>
-                  <Link href="/sign-in">
-                    <button className=" text-primary font-bold px-6 py-3 rounded-lg shadow-lg border-2 border-primary">
-                      Login
-                    </button>
-                  </Link>
-                </>
-              )}
-            </div>
-            <div className="hidden lg:flex justify-center items-center gap-4 ml-4">
-            <a href="https://www.facebook.com/iamafnanhussain" target="_blank">
-            <Facebook/>
-            </a>
-            <a href="https://x.com/MdAfnanHussain" target="_blank">
-           <Image
-           src={XLogo}
-           width={20}
-           height={30}
-           alt="x.com"
-           />
-            </a>
-            <a href="https://www.linkedin.com/in/md-afnan-hussain/" target="_blank">
-            <Linkedin/>
-            </a>
-
-          </div>
-          </div>
-        </header>
+       
         {/* Page content */}
         <main className="flex-grow">
           <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 my-8">
@@ -176,28 +100,11 @@ export default function AppLayout({
               </button>
             </div>
           )}
-          <div className="flex justify-center items-center gap-4">
-            <p className="font-bold">Follow us:</p>
-            <a href="https://www.facebook.com/iamafnanhussain" target="_blank">
-            <Facebook/>
-            </a>
-            <a href="https://x.com/MdAfnanHussain" target="_blank">
-           <Image
-           src={XLogo}
-           width={20}
-           height={30}
-           alt="x.com"
-           />
-            </a>
-            <a href="https://www.linkedin.com/in/md-afnan-hussain/" target="_blank">
-            <Linkedin/>
-            </a>
-
-          </div>
+         
         </aside>
       </div>
     </div>
-    <Footer/>
+    
     
     </>
   );
