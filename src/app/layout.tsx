@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import { Facebook, Linkedin } from "lucide-react";
 import Image from "next/image";
 import XLogo from "@/images/x-logo.png"
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -97,15 +98,13 @@ export default function RootLayout({
         <ul
           tabIndex={0}
           className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-          <li><a>Item 1</a></li>
-          <li>
-            <a>Parent</a>
-            <ul className="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </li>
-          <li><a>Item 3</a></li>
+          <li><Link href={"/home"}>Home</Link></li>
+          <li><Link href={"/about"}>About</Link></li>
+          <li><Link href={"/contact"}>Contact</Link></li>
+          <li><Link href={"/blog"}>Blog</Link></li>
+          <li><Link href={"/image-optimize"}>Image Optimize</Link></li>
+
+         
         </ul>
       </div>
       <a href="/" className="btn btn-ghost text-xl">Makingchip.com</a>
