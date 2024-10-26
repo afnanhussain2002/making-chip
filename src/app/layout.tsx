@@ -4,6 +4,10 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Script from "next/script";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import Footer from "@/components/Footer";
+import { Facebook, Linkedin } from "lucide-react";
+import Image from "next/image";
+import XLogo from "@/images/x-logo.png"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -58,19 +62,93 @@ export default function RootLayout({
           <GoogleTagManager gtmId="GTM-M5QG48T6" />
         </head>
         <body
+        
           data-theme={"synthwave"}
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+         
           <noscript>
             <iframe
               src="https://www.googletagmanager.com/ns.html?id=GTM-M5QG48T6"
               height="0"
               width="0"
-              style={{display:"none",visibility:"hidden"}}
+              style={{ display: "none", visibility: "hidden" }}
             ></iframe>
           </noscript>
+          <div className="bg-base-200">
 
+          <div className="navbar bg-base-200 max-w-7xl mx-auto">
+    <div className="navbar-start">
+      <div className="dropdown">
+        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h8m-8 6h16" />
+          </svg>
+        </div>
+        <ul
+          tabIndex={0}
+          className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+          <li><a>Item 1</a></li>
+          <li>
+            <a>Parent</a>
+            <ul className="p-2">
+              <li><a>Submenu 1</a></li>
+              <li><a>Submenu 2</a></li>
+            </ul>
+          </li>
+          <li><a>Item 3</a></li>
+        </ul>
+      </div>
+      <a href="/" className="btn btn-ghost text-xl">Makingchip.com</a>
+    </div>
+    <div className="navbar-center hidden lg:flex">
+      <ul className="menu menu-horizontal px-1">
+        <li><a>Item 1</a></li>
+        <li>
+          <details>
+            <summary>Parent</summary>
+            <ul className="p-2">
+              <li><a>Submenu 1</a></li>
+              <li><a>Submenu 2</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a>Item 3</a></li>
+      </ul>
+    </div>
+    <div className="navbar-end">
+    <div className="flex justify-center items-center gap-4">
+            <p className="font-bold">Follow us:</p>
+            <a href="https://www.facebook.com/iamafnanhussain" target="_blank">
+            <Facebook/>
+            </a>
+            <a href="https://x.com/MdAfnanHussain" target="_blank">
+           <Image
+           src={XLogo}
+           width={20}
+           height={30}
+           alt="x.com"
+           />
+            </a>
+            <a href="https://www.linkedin.com/in/md-afnan-hussain/" target="_blank">
+            <Linkedin/>
+            </a>
+
+          </div>
+    </div>
+  </div>
+          </div>
           {children}
+          <Footer/>
         </body>
       </html>
     </ClerkProvider>
