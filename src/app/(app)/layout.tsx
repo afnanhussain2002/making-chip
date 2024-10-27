@@ -13,7 +13,8 @@ import {
   Scan,
   RectangleEllipsis,
   SmilePlus,
-  Milestone
+  Milestone,
+  ReceiptText
 } from "lucide-react";
 
 
@@ -26,7 +27,7 @@ const sidebarItems = [
   { href: "/image-fill", icon: RectangleEllipsis, label: "Image Bg Fill" },
   { href: "/funny-templates", icon: SmilePlus, label: "Funny Templates" },
   { href: "/post-template", icon: Milestone, label: "Post Template" },
-  { href: "/details-about", icon: Milestone, label: "Details Blog" },
+  { href: "/details-about", icon: ReceiptText, label: "Details Blog" },
 ];
 
 export default function AppLayout({
