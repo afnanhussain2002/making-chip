@@ -2,6 +2,11 @@ import React from "react";
 import MakingChip from '@/app/opengraph-image.png';
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata ={
+  title:"Blog"
+}
 
 const BlogPost = () => {
   return (
