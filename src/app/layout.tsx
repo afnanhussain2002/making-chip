@@ -5,9 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import Script from "next/script";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import Footer from "@/components/Footer";
-import { Facebook, Instagram, Linkedin } from "lucide-react";
-import Image from "next/image";
-import XLogo from "@/images/x-logo.png"
+import { Facebook, Instagram, } from "lucide-react";
 import Link from "next/link";
 import { FaTiktok } from "react-icons/fa";
 
