@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: "Image Optimize | Making Chip - Ai Image Optimize",
   description: "Optimize your images",
   keywords: ["imageOptimize", "Image Optimize", "Ai Image Optimize", "Making Chip"],
+  robots:{
+    index:true,
+    follow:true
+  }
 
 };
 

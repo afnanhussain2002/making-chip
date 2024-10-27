@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   title: "Image Fill | Making Chip - Ai Image Optimize",
   description: "Fill up the image background",
   keywords:["imageFill", "Image Background Fill", "Ai Image Fill,", "Making Chip"],
+  robots:{
+    index:true,
+    follow:true
+  }
 
 };
 

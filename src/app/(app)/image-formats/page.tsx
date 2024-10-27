@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: "Image Format | Making Chip - Ai Image Optimize  ",
   description: "Create social media images with different formats",
   keywords:["Social Size", "Social Media", "Image Format", "Making Chip"],
+  robots:{
+    index:true,
+    follow:true
+  }
 
 };
 

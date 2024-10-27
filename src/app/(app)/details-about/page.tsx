@@ -5,7 +5,11 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata ={
-  title:"Blog"
+  title:"Blog",
+  robots:{
+    index:true,
+    follow:true
+  }
 }
 
 const BlogPost = () => {

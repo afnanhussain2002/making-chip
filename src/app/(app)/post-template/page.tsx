@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   title: "Post Template | Making Chip - Ai Image Optimize",
   description: "A template is a pre-made design that can be used to create an image. ",
   keywords: ["imagePost", "Image Post", "Post Template", "Making Chip"],
+  robots:{
+    index:true,
+    follow:true
+  }
 
 };
 
