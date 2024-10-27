@@ -120,7 +120,7 @@ export default function RootLayout({
       <li><Link href={"/home"}>Home</Link></li>
           <li><Link href={"/about"}>About</Link></li>
           <li><Link href={"/contact"}>Contact</Link></li>
-          <li><Link href={"/blog"}>Blog</Link></li>
+          <li><Link href={"/details-about"}>Blog</Link></li>
           <li><Link href={"/image-optimize"}>Image Optimize</Link></li>
           <li><Link href={"/image-fill"}>Image Bg Fill</Link></li>
          
