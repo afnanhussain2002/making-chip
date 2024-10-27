@@ -112,17 +112,11 @@ export default function RootLayout({
     </div>
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal px-1">
-        <li><a>Item 1</a></li>
-        <li>
-          <details>
-            <summary>Parent</summary>
-            <ul className="p-2">
-              <li><a>Submenu 1</a></li>
-              <li><a>Submenu 2</a></li>
-            </ul>
-          </details>
-        </li>
-        <li><a>Item 3</a></li>
+      <li><Link href={"/home"}>Home</Link></li>
+          <li><Link href={"/about"}>About</Link></li>
+          <li><Link href={"/contact"}>Contact</Link></li>
+          <li><Link href={"/blog"}>Blog</Link></li>
+          <li><Link href={"/image-optimize"}>Image Optimize</Link></li>
       </ul>
     </div>
     <div className="navbar-end">
