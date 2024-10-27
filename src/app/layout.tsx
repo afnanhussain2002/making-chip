@@ -5,10 +5,11 @@ import { ClerkProvider } from "@clerk/nextjs";
 import Script from "next/script";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import Footer from "@/components/Footer";
-import { Facebook, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 import XLogo from "@/images/x-logo.png"
 import Link from "next/link";
+import { FaTiktok } from "react-icons/fa";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -126,20 +127,15 @@ export default function RootLayout({
     </div>
     <div className="navbar-end">
     <div className="flex justify-center items-center gap-4">
-            <p className="font-bold">Follow us:</p>
+          
             <a href="https://www.facebook.com/iamafnanhussain" target="_blank">
             <Facebook/>
             </a>
-            <a href="https://x.com/MdAfnanHussain" target="_blank">
-           <Image
-           src={XLogo}
-           width={20}
-           height={30}
-           alt="x.com"
-           />
+            <a href="https://www.tiktok.com/@makingchip.com" target="_blank">
+           <FaTiktok className="w-6 h-6"/>
             </a>
-            <a href="https://www.linkedin.com/in/md-afnan-hussain/" target="_blank">
-            <Linkedin/>
+            <a href="https://www.instagram.com/makingchip" target="_blank">
+            <Instagram/>
             </a>
 
           </div>
