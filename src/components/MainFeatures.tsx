@@ -9,7 +9,7 @@ import SocialFormats from '@/public/socialFormats.jpg'
 function MainFeatures() {
   return (
    <>
-   <h1 className="text-5xl font-bold text-primary text-center mt-12">Main Features</h1>
+   <h1 className="text-5xl font-bold uppercase bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent text-primary text-center mt-12">Main Features</h1>
    {/* optimized image  */}
    <div className="hero min-h-[400px]">
     
