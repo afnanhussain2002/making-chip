@@ -13,7 +13,7 @@ function MainFeatures() {
    {/* optimized image  */}
    <div className="hero min-h-[400px]">
     
-    <div className="hero-content flex-col lg:flex-row-reverse border-b border-primary">
+    <div className="hero-content flex-col lg:flex-row-reverse ">
     <div className="flex-1">
         <h1 className="text-5xl font-bold text-primary">Optimize Image</h1>
         <p className="py-6">
@@ -37,7 +37,7 @@ function MainFeatures() {
    {/* Image Background fill  */}
    <div className="hero min-h-[400px]">
     
-    <div className="hero-content flex-col lg:flex-row-reverse border-b border-primary">
+    <div className="hero-content flex-col lg:flex-row-reverse ">
     <Image
         src={BgFill}
         className=" rounded-lg shadow-2xl flex-1" 
