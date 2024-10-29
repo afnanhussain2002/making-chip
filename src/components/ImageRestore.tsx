@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Image from "next/image";
-import byteSize from "byte-size";
 import { CldImage } from "next-cloudinary";
 
 function ImageImprove() {
@@ -11,13 +10,8 @@ function ImageImprove() {
   const [imageWidth, setImageWidth] = useState<number>(0);
   const [imageHeight, setImageHeight] = useState<number>(0);
   const [originalImage, setOriginalImage] = useState<string | null>(null);
-  const [originalSize, setOriginalSize] = useState<number>(0);
-  const [compressedSize, setCompressedSize] = useState<number>(0);
   const [isDownloading, setIsDownloading] = useState(false);
 
-  // bytes size to MB
-  const originalSizeInMB = byteSize(originalSize);
-  const compressedSizeInMB = byteSize(compressedSize);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -39,8 +33,6 @@ function ImageImprove() {
       setUploadedImage(data.restoreImage);
       setImageWidth(data.width);
       setImageHeight(data.height);
-      setOriginalSize(data.originalSize);
-      setCompressedSize(data.bytes);
       return;
     } catch (error) {
       console.log(error);
