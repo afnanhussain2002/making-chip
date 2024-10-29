@@ -15,7 +15,7 @@ function MainFeatures() {
     
     <div className="hero-content flex-col lg:flex-row-reverse ">
     <div className="flex-1">
-        <h1 className="text-5xl font-bold text-primary">Optimize Image</h1>
+        <h1 className="text-3xl font-bold text-primary">Optimize Image</h1>
         <p className="py-6">
          optimize your image up to 40% without losing the quality of the image.
         </p>
@@ -46,7 +46,7 @@ function MainFeatures() {
         alt="hero image"
         />
     <div className="flex-1">
-        <h1 className="text-5xl font-bold text-primary"> Image Background Fill</h1>
+        <h1 className="text-3xl font-bold text-primary"> Image Background Fill</h1>
         <p className="py-6">
          Fill up your image background landscape or portrait with just a few clicks.
         </p>
@@ -65,7 +65,7 @@ function MainFeatures() {
     <div className="hero-content flex-col lg:flex-row-reverse">
     
     <div className="flex-1">
-        <h1 className="text-5xl font-bold text-primary"> Image Social Formats</h1>
+        <h1 className="text-3xl font-bold text-primary"> Image Social Formats</h1>
         <p className="py-6">
          Convert and manage a wide range of image social formats.
         </p>
