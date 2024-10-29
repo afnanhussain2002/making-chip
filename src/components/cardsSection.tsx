@@ -11,10 +11,11 @@ function Card() {
   return (
     <>
       <div
-        className="
-h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border border-gray-100
- py-5"
-      >
+  className="
+    h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border border-gray-100 py-5 hover:bg-gray-500
+    transform transition-transform duration-300 hover:scale-105
+  "
+>
         <Link href={"/image-fill"}>
           <div className="flex flex-col items-center space-y-2">
             <Image
@@ -31,9 +32,11 @@ h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-bl
       </div>
 
       <div
-        className="
-h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border border-red-100 py-5"
-      >
+  className="
+    h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border border-gray-100 py-5 hover:bg-gray-500
+    transform transition-transform duration-300 hover:scale-105
+  "
+>
         <Link href={"/image-optimize"}>
           <div className="flex flex-col items-center space-y-2">
             <Image
@@ -50,9 +53,11 @@ h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-bl
       </div>
 
       <div
-        className="
-h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border border-gray-100 py-5"
-      >
+  className="
+    h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border border-gray-100 py-5 hover:bg-gray-500
+    transform transition-transform duration-300 hover:scale-105
+  "
+>
         <Link href={"/image-formats"}>
           <div className="flex flex-col items-center space-y-2">
             <Image
@@ -69,9 +74,11 @@ h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-bl
       </div>
 
       <div
-        className="
-h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border border-gray-100 py-5"
-      >
+  className="
+    h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border border-gray-100 py-5 hover:bg-gray-500
+    transform transition-transform duration-300 hover:scale-105
+  "
+>
         <Link href={"/funny-templates"}>
           <div className="flex flex-col items-center space-y-2">
             <Image
@@ -88,9 +95,11 @@ h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-bl
       </div>
 
       <div
-        className="
-h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border border-gray-100 py-5"
-      >
+  className="
+    h-full w-full bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50 border border-gray-100 py-5 hover:bg-gray-500
+    transform transition-transform duration-300 hover:scale-105
+  "
+>
         <Link href={"/image-restore"}>
           <div className="flex flex-col items-center space-y-2">
             <Image
