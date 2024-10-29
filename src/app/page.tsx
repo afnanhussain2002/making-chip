@@ -1,8 +1,9 @@
-import Image from "next/image";
+
 import Link from "next/link";
 import MainFeatures from "@/components/MainFeatures";
 import { IoShareSocialOutline } from "react-icons/io5";
 import { TbBackground } from "react-icons/tb";
+import Card from "@/components/cardsSection";
 
 export default function Home() {
   return (
@@ -42,6 +43,12 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+          {/* 2nd section */}
+    <div className="grid gap-2 grid-cols-2 max-w-7xl mx-auto mt-8 lg:grid-cols-5 ">
+
+<Card/>
+</div>
 
 
   <MainFeatures/>
