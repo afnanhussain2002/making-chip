@@ -15,11 +15,24 @@ const socialFormats = {
 
 type SocialFormat = keyof typeof socialFormats;
 
+const gravityFormats = {
+  "Top": "north",
+  "Bottom": "south",
+  "Right": "east",
+  "Left": "west",
+  "Center": "center",
+  "auto": "auto",
+
+}
+
+type GravityFormat = keyof typeof gravityFormats;
+
 function ImageFormats() {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [selectedFormat, setSelectedFormat] = useState<SocialFormat>(
     "Instagram Square (1:1)"
   );
+  const [selectedGravity, setSelectedGravity] = useState<GravityFormat>("auto");
   const [isUploading, setIsUploading] = useState(false);
   const [isTransforming, setIsTransforming] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
@@ -29,7 +42,7 @@ function ImageFormats() {
     if (uploadedImage) {
       setIsTransforming(true);
     }
-  }, [selectedFormat, uploadedImage]);
+  }, [selectedFormat, uploadedImage, selectedGravity]);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -99,9 +112,8 @@ function ImageFormats() {
   return (
     <div className="container mx-auto p-4 max-w-4xl">
       <h1 className="text-3xl font-bold mb-6 text-center">
-        Social Media Image Formats
+        Social Media Image Creator
       </h1>
-      <p className="w-3/4 mx-auto mt-4 text-center">Upload any image and change the social formats of that image. You can select facebook cover, twitter or X post, Instagram image formats and much more.</p>
 
       <div className="card">
         <div className="card-body">
@@ -140,6 +152,20 @@ function ImageFormats() {
                     </option>
                   ))}
                 </select>
+                <p className="mt-2 font-bold">Select Image Position</p>
+                <select
+                  className="select select-bordered w-full mt-2"
+                  value={selectedGravity}
+                  onChange={(e) =>
+                    setSelectedGravity(e.target.value as GravityFormat)
+                  }
+                >
+                  {Object.keys(gravityFormats).map((format) => (
+                    <option key={format} value={format}>
+                      {format}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               <div className="mt-6 relative">
@@ -158,7 +184,7 @@ function ImageFormats() {
                     alt="transformed image"
                     crop="fill"
                     aspectRatio={socialFormats[selectedFormat].aspectRatio}
-                    gravity="auto"
+                    gravity={gravityFormats[selectedGravity]}
                     ref={imageRef}
                     onLoad={() => setIsTransforming(false)}
                   />
