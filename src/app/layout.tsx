@@ -37,6 +37,10 @@ export const metadata: Metadata = {
     locale: "en-US",
     siteName: "Making Chip",
   },
+  robots:{
+    index:true,
+    follow:true
+  }
 };
 
 export default function RootLayout({
