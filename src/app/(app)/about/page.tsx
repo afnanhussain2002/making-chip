@@ -1,5 +1,5 @@
 import React from "react";
-import AfnanProfile from "@/public/afnan.jpg";
+import AfnanProfile from "@/images/afnan.jpg";
 import Image from "next/image";
 import { MdWork } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
