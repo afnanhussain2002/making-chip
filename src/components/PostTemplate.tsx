@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import DummyImage from "@/public/dummy_user.jpg";
+import DummyImage from "@/images/dummy_user.jpg";
 import Image from "next/image";
 import { TbPointFilled } from "react-icons/tb";
 import domtoimage from "dom-to-image";

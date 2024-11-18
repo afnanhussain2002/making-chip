@@ -1,10 +1,10 @@
 
 import Image from 'next/image'
 import React from 'react'
-import optimizedImage from '@/public/optimized-ss.jpg'
+import optimizedImage from '@/images/optimized-ss.jpg'
 import Link from 'next/link'
-import BgFill from '@/public/bg-fill.jpg'
-import SocialFormats from '@/public/socialFormats.jpg'
+import BgFill from '@/images/bg-fill.jpg'
+import SocialFormats from '@/images/socialFormats.jpg'
 
 function MainFeatures() {
   return (
