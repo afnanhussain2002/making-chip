@@ -79,7 +79,7 @@ function FunnyTemplates() {
     <>
     <h2 className='text-5xl font-bold text-center mb-8'>Funny Templates</h2>
     <main className='grid grid-cols-1 gap-1 md:grid-cols-2'>
-        <div className="w-[200px] h-[200px] relative bg-[url('../public/BokhriTemplate.png')] bg-cover">
+        <div className="w-[200px] h-[200px] relative bg-[url('../images/BokhriTemplate.png')] bg-cover">
   <div className='relative'>
   <Image
               src={originalImage ? originalImage : Makingchip}

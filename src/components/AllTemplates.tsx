@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import Makingchip from "@/app/opengraph-image.png";
 import { FaCaretRight, FaFacebook, FaYoutube } from 'react-icons/fa';
+import bok from ''
 
 interface Props {
     originalImage: string | null ;
@@ -20,7 +21,7 @@ function AllTemplates({originalImage, text, setImagesLoaded, realDate, isDownloa
     <main>
          <div
         id="bokhriTemplate"
-        className="w-[500px] h-[500px] relative bg-[url('../public/BokhriTemplate.png')] bg-cover"
+        className="w-[500px] h-[500px] relative bg-[url('../images/BokhriTemplate.png')] bg-cover"
       >
         <div className="relative">
           <Image
