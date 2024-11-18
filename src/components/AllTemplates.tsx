@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import Makingchip from "@/app/opengraph-image.png";
 import { FaCaretRight, FaFacebook, FaYoutube } from 'react-icons/fa';
-import bok from ''
+
 
 interface Props {
     originalImage: string | null ;
