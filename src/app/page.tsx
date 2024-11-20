@@ -4,7 +4,19 @@ import MainFeatures from "@/components/MainFeatures";
 import { IoShareSocialOutline } from "react-icons/io5";
 import { TbBackground } from "react-icons/tb";
 import Card from "@/components/cardsSection";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Making Chip - Play with your images",
+  description: "You can optimize your image, fill image background using AI, and much more. ",
+  keywords: ["imagePost", "Image Post", "Post Template", "Making Chip", "imageOptimize", "Image Optimize", "Ai Image Optimize", "imageFill", "Image Background Fill", "Ai Image Fill,", "imageRestore", "Ai Image Restore"],
+  robots:{
+    index:true,
+    follow:true
+  },
+
+
+};
 export default function Home() {
   return (
     <>

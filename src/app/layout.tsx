@@ -40,7 +40,8 @@ export const metadata: Metadata = {
   robots:{
     index:true,
     follow:true
-  }
+  },
+  keywords:["imagePost", "Image Post", "Post Template", "Making Chip", "imageOptimize", "Image Optimize", "Ai Image Optimize", "imageFill", "Image Background Fill", "Ai Image Fill,", "imageRestore", "Ai Image Restore"],
 };
 
 export default function RootLayout({
