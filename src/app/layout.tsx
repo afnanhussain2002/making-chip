@@ -21,7 +21,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.makingchip.com"),
+  metadataBase: new URL("https://.makingchip.com"),
   title: {
   default:"Making Chip - Play with your images",
   template: "%s - Making Chip",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Making Chip",
     description:
       "You can optimize your image, fill image background using AI, and much more.",
-    url: "https://www.makingchip.com",
+    url: "https://makingchip.com",
     type: "website",
     locale: "en-US",
     siteName: "Making Chip",
