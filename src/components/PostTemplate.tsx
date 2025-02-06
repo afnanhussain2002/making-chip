@@ -19,6 +19,9 @@ function PostTemplate() {
       [{ 'color': [] }, { 'bold': true }], // Add color and bold options
       [{ 'align': [] }], // Optional: Add text alignment options
     ],
+    // The following modules are used to generate the post template
+    // - toolbar: The text alignment options
+    // - align: The text alignment options
   };
 
 
